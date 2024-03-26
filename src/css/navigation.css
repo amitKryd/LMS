@@ -1,0 +1,99 @@
+.main_navigation_div {
+  background-color: #0a1e44;
+  /* height: 40px; */
+}
+.navigate_header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  height: 50px;
+  margin: 0px 40px;
+  position: relative;
+}
+.navigate_header p {
+  color: #fff;
+  cursor: pointer;
+}
+.navigate_header .active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 8%;
+  height: 2px; 
+  background-color: blue; 
+}
+.bottom_head_nav {
+  background-color: #fff;
+  margin: 20px 20px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo_with_btn {
+  display: flex;
+  align-items: center;
+  /* gap: 20px; */
+}
+.explore_btns_nav {
+  background-color: #0966ed;
+  padding: 12px 40px 12px 13px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  position: relative;
+  font-size: 16px;
+  margin-left: 35px;
+}
+.down_arrow {
+  position: absolute;
+  top: 9px;
+  right: 0px;
+  padding: 0px 10px 0px 10px;
+}
+.input_search__nav {
+  padding: 0px 10px;
+  height: 40px;
+  border-radius: 4px;
+  min-width: 270px;
+  border: 1px solid #c0c0c0;
+  margin-left: 20px;
+}
+.img_search_icon{
+    background-color: #0966ed;
+    height: 40px;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 0px 4px 4px 0px;
+}
+.btns_nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.login_btn_nav{
+    border: none;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0px 20px;
+}
+.login_btn_nav:hover{
+    color: #fff;
+    background-color: #0966ed;
+    height: 40px;
+    border-radius: 4px;
+    /* transition-delay:1s; */
+}
+.joinforFree_btn_nav{
+    border: none;
+    background-color: #0966ed;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff;
+    height: 40px;
+    padding: 0px 20px;
+    cursor: pointer;
+}
+

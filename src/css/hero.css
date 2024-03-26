@@ -1,0 +1,42 @@
+.main_hero_div{
+    background-color:  rgba(218,226,255,0.7) ;
+    padding-top: 50px;
+}
+.lorem_title_nav{
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    margin: auto;
+}
+.heading_title_nav{
+    text-align: center;
+    color: #7A7A7A;
+    word-wrap: break-word;
+}
+.learn_without_hero{
+    text-align: center;
+    font-weight: 700;
+    font-size: 56px;
+}
+.btn_part_hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 35px 0px;
+    gap: 25px;
+}
+.try_coolBtn_hero{
+    border: 1px solid #0966ed;
+    border-radius: 4px;
+    height: 40px;
+    padding: 0px 20px;
+    color: #0966ed;
+    font-size: 16px;
+}
+.img_group_onn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
