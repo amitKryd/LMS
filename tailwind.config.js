@@ -22,4 +22,15 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
     "./public/index.html",
   ],
+  theme: {
+    extend: {
+      colors: {
+        customBlue: '#0966ed',
+        bgWhite:"#fff",
+        textColor:"#7A7A7A"
+      },
+    },
+  },
+  variants: {},
+  plugins: [],
 };

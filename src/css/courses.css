@@ -1,16 +1,26 @@
 .main_courses_div{
 margin: auto;
 width: 90%;
-margin-top: 20px;
+margin-top: 60px;
 }
-.for_listing_courses ul li{
- display: inline-block;
- margin: 20px 10px;
- cursor: pointer;
+.for_listing_courses {
+ display: flex;
+ flex-wrap: wrap;
+ margin: 20px 0px;
  color: black;
- font-weight: 500;
- font-size: 16px;
+ gap: 15px;
+ /* border-bottom: 4px solid #e5e7e8; */
+ width: 100%;
+ position: relative;
 }
-.for_listing_courses ul li:active{
-    border: 1px solid #0966ed;
+.for_listing_courses p{
+    cursor: pointer;
 }
+.for_listing_courses .active{
+    display: block;
+    /* line-height: 19px; */
+    padding-bottom: 8px;
+    border-bottom: 4px solid #0966ed;
+    
+}
+
