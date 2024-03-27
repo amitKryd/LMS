@@ -12,14 +12,15 @@ margin-top: 60px;
  /* border-bottom: 4px solid #e5e7e8; */
  width: 100%;
  position: relative;
+
 }
 .for_listing_courses p{
     cursor: pointer;
+    padding-bottom: 8px;
 }
 .for_listing_courses .active{
     display: block;
     /* line-height: 19px; */
-    padding-bottom: 8px;
     border-bottom: 4px solid #0966ed;
     
 }

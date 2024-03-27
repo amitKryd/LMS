@@ -4,7 +4,7 @@ import roundedbar from "../../images/roundedbar.png";
 import imageOne from "../../images/ImageOne.png"
 import Card from "../card/Card";
 const CoursesComp = () => {
-  const [activeIndex, setActiveIndex] = useState();
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleItemClick = (index) => {
     setActiveIndex(index === activeIndex ? null : index);
@@ -15,6 +15,7 @@ const CoursesComp = () => {
         <h2 className="font-semibold text-3xl">
           Get Started with your Courses today!
         </h2>
+        
         <div className="for_listing_courses">
           <p
             className={activeIndex === 0 ? "active" : ""}
@@ -64,11 +65,13 @@ const CoursesComp = () => {
               minWidth: "90%",
               height: "4px",
               position: "absolute",
-              bottom: "0",
+              bottom: "0px",
               zIndex: "-1",
             }}
           />
         </div>
+        
+         
         <DataAnalyst />
       </div>
     </>
@@ -101,9 +104,11 @@ const DataAnalyst = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
             suscipit rhoncus nunc id{" "}
           </p>
-          <div className="my-10 flex flex-row gap-[100px]">
+          <div className="my-10 flex flex-row justify-between  gap-[100px]">
+            <div className="min-w-40">
             <img src={roundedbar} alt="graph" />
-            <div className="flex flex-col ">
+            </div>
+            <div className="flex justify-between  flex-col min-w-60 ">
               <h2 className="pt-10 font-semibold ">
                 Recommended Professional Certificates
               </h2>

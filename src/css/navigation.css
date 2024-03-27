@@ -11,7 +11,7 @@
   position: relative;
 }
 .navigate_header p {
-  color: #fff;
+  color: black;
   cursor: pointer;
 }
 .navigate_header .active::after {

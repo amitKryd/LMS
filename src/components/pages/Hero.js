@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <>
-      <Navigation />
+      
       <BottomNav />
       <div className="main_hero_div">
         <div>
