@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import "../../css/navigation.css";
-import Logo from "../../images/Logo.png";
-import downArrow from "../../images/downArrow.png";
-import search from "../../images/search.png";
-import JoinFreeBtn from "../button/PrimaryButton";
+import { motion } from "framer-motion";
+// import "../../css/navigation.css";
+import  "../../../css/navigation.css"
+import Logo from "../../../images/Logo.png";
+import downArrow from "../../../images/downArrow.png";
+import search from "../../../images/search.png";
+import JoinFreeBtn from "../../button/PrimaryButton";
 import Navigation from "./TopNavigation";
 const BottomNav = () => {
   return (

@@ -3,6 +3,7 @@ import "../../css/courses.css";
 import roundedbar from "../../images/roundedbar.png";
 import imageOne from "../../images/ImageOne.png"
 import Card from "../card/Card";
+
 const CoursesComp = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -79,7 +80,6 @@ const CoursesComp = () => {
 };
 
 export default CoursesComp;
-
 const DataAnalyst = () => {
   const data = [
     {

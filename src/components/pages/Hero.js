@@ -2,9 +2,10 @@ import React from "react";
 import JoinFreeBtn from "../button/PrimaryButton";
 import "../../css/hero.css";
 import Group_one from "../../images/Group_one.png";
-import BottomNav from "../navigation/BottomNavigation";
-import Navigation from "../navigation/TopNavigation";
+import Navigation from "../../components/pages/navigation/TopNavigation";
+
 import { motion } from "framer-motion";
+import BottomNav from "./navigation/BottomNavigation";
 const Hero = () => {
   return (
     <>

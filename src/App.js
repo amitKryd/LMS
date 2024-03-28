@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "./components/pages/Hero";
 import CoursesComp from "./components/pages/CoursesComp";
+import { Individual } from "./components/pages/Individuals/Individual";
 import { BrowserRouter } from "react-router-dom";
 
 function App() {
@@ -8,8 +9,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
      {/* <Navigation /> */}
-     <Hero />
-     <CoursesComp  />
+     <Individual/>
+
      </BrowserRouter>
     </div>
   );
