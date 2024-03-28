@@ -4,6 +4,7 @@ import CoursesComp from "./components/pages/CoursesComp";
 import { Individual } from "./components/pages/Individuals/Individual";
 import { BrowserRouter } from "react-router-dom";
 import WhyChooseCourses from "./components/pages/WhyChooseCourses";
+import AdvertizeTwo from "./components/pages/AdvertizeTwo";
 
 function App() {
   return (
@@ -13,7 +14,11 @@ function App() {
         <Individual />
         {/* <Hero /> */}
         {/* <CoursesComp /> */}
+        {/* <WhyChooseCourses />
+        <Hero /> */}
+        {/* <CoursesComp /> */}
         <WhyChooseCourses />
+        <AdvertizeTwo />
       </BrowserRouter>
     </div>
   );
