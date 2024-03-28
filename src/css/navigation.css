@@ -25,8 +25,8 @@
 }
 .bottom_head_nav {
   background-color: #fff;
-  margin: 20px 20px;
-  height: 60px;
+  margin: 8px 20px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -86,7 +86,7 @@
     border-radius: 4px;
     /* transition-delay:1s; */
 }
-.joinforFree_btn_nav{
+/* .joinforFree_btn_nav{
     border: none;
     background-color: #0966ed;
     border-radius: 4px;
@@ -95,5 +95,5 @@
     height: 40px;
     padding: 0px 20px;
     cursor: pointer;
-}
+} */
 

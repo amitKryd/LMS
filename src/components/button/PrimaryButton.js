@@ -1,10 +1,12 @@
 import React from 'react'
 
 const JoinFreeBtn = (props) => {
-    const {title} = props
+    const {title,bgColor,color} = props
     return  (
         <>
-         <button className='joinforFree_btn_nav'>{title}</button>
+         <button className={`${bgColor} ${color} border-none rounded-md text-base px-5 h-10 cursor-pointer`}>
+                {title}
+            </button>
         </>
     )
 }

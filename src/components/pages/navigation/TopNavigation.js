@@ -10,39 +10,38 @@ const Navigation = () => {
   return (
     <>
       <div className="">
-      <div className="flex gap-10 items-center pt-1">
-  <p
-    className={`${
-      activeIndex === 0
-        ? "active pb-2 border-b-2 border-solid border-blue-500 cursor-pointer h-7"
-        : "cursor-pointer  flex-shrink-0 h-7"
-    }`}
-    onClick={() => handleItemClick(0)}
-  >
-    For Individuals
-  </p>
-  <p
-    className={`${
-      activeIndex === 1
-        ? "active pb-2 border-b-2 border-solid border-blue-500 cursor-pointer h-7"
-        : "cursor-pointer flex-shrink-0 h-7"
-    }`}
-    onClick={() => handleItemClick(1)}
-  >
-    For Universities
-  </p>
-  <p
-    className={`${
-      activeIndex === 2
-        ? "active pb-2 border-b-2 border-solid border-blue-500 cursor-pointer h-7"
-        : "cursor-pointer flex-shrink-0 h-7"
-    }`}
-    onClick={() => handleItemClick(2)}
-  >
-    For Corporates
-  </p>
-</div>
-
+        <div className="flex gap-10 items-center pt-1">
+          <p
+            className={`${
+              activeIndex === 0
+                ? "active pb-2 border-b-2 border-solid border-blue-500 cursor-pointer h-7"
+                : "cursor-pointer  flex-shrink-0 h-7"
+            }`}
+            onClick={() => handleItemClick(0)}
+          >
+            For Individuals
+          </p>
+          <p
+            className={`${
+              activeIndex === 1
+                ? "active pb-2 border-b-2 border-solid border-blue-500 cursor-pointer h-7"
+                : "cursor-pointer flex-shrink-0 h-7"
+            }`}
+            onClick={() => handleItemClick(1)}
+          >
+            For Universities
+          </p>
+          <p
+            className={`${
+              activeIndex === 2
+                ? "active pb-2 border-b-2 border-solid border-blue-500 cursor-pointer h-7"
+                : "cursor-pointer flex-shrink-0 h-7"
+            }`}
+            onClick={() => handleItemClick(2)}
+          >
+            For Corporates
+          </p>
+        </div>
       </div>
     </>
   );

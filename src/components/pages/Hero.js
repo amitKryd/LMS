@@ -23,15 +23,13 @@ const Hero = () => {
           </p>
         </div>
         <div className="btn_part_hero">
-          <JoinFreeBtn title={"Join for Free"} />
+          <JoinFreeBtn title={"Join for Free"} bgColor={"bg-blue-600"} color={"text-white"} />
           <button className="try_coolBtn_hero">
             Try CoolTeacher for Universities
           </button>
         </div>
         <div className="img_group_onn">
-          
-            <img src={Group_one} alt="header-photo" />
-          
+        <img src={process.env.PUBLIC_URL + "/images/Hero image.png"} alt="" />
         </div>
       </div>
     </>
