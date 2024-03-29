@@ -16,16 +16,14 @@ export const Individual = () =>{
       <>
        <Hero />
        <ExpertHelp/>
-       <AboutUs />
+       <CoursesComp  />  
        <NewTeacherCool />
-        <CourseToday />
-        <WhyChooseCourses />
+       <WhyChooseCourses />
+       <AboutUs />
         <AdvertizeTwo />
         <CourseToday />
         <TeacherCoolCourses />
         <FrequentlyAskQuest/>
-      <CoursesComp  />  
-    
     
       </>
     )
