@@ -18,13 +18,13 @@ function App() {
         {/* <Hero /> */}
         {/* <CoursesComp /> */}
         <Individual />
-        <NewTeacherCool />
+        {/* <NewTeacherCool />
         <CourseToday />
         <WhyChooseCourses />
         <AdvertizeTwo />
         <CourseToday />
         <TeacherCoolCourses />
-        <FrequentlyAskQuest/>
+        <FrequentlyAskQuest/> */}
       </BrowserRouter>
     </div>
   );

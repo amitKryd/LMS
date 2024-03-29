@@ -2,9 +2,9 @@ import React from "react";
 
 const WhyChooseCourses = () => {
   return (
-    <div className="w-[90%] m-auto mb-4 mt-4 flex justify-between">
-      <div className="w-[40%]">
-        <h1 className="text-4xl bold font-extrabold pb-4">
+    <div className="container mx-auto mb-4 mt-4 flex justify-between lg:flex-row sm:flex-col gap-4 max-sm:flex-col">
+      <div className="container">
+        <h1 className="text-6xl font-bold pb-4">
           Why Choose Our Courses
         </h1>
         <p className="text-gray-500 text-sm pb-4">
@@ -62,7 +62,7 @@ const WhyChooseCourses = () => {
           </div>
         </div>
       </div>
-      <div className="w-[50%]">
+      <div className="container">
         <div className="flex items-center w-[100%] m-0 justify-between">
           <img
             src={process.env.PUBLIC_URL + "/images/Frame 90.png"}

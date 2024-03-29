@@ -3,6 +3,12 @@ import CoursesComp from "../CoursesComp";
 import Hero from "../Hero";
 import { ExpertHelp } from "../../expertHelp/expertHelp";
 import { AboutUs } from "./AboutUs/aboutUs";
+import NewTeacherCool from "../NewTeacherCool";
+import CourseToday from "../CourseToday";
+import WhyChooseCourses from "../WhyChooseCourses";
+import AdvertizeTwo from "../AdvertizeTwo";
+import TeacherCoolCourses from "../TeacherCoolCourses";
+import FrequentlyAskQuest from "../FrequentlyAskQuest";
 
 
 export const Individual = () =>{
@@ -11,6 +17,13 @@ export const Individual = () =>{
        <Hero />
        <ExpertHelp/>
        <AboutUs />
+       <NewTeacherCool />
+        <CourseToday />
+        <WhyChooseCourses />
+        <AdvertizeTwo />
+        <CourseToday />
+        <TeacherCoolCourses />
+        <FrequentlyAskQuest/>
       <CoursesComp  />  
     
     

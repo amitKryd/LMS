@@ -8,7 +8,7 @@ import Navigation from "./TopNavigation";
 const BottomNav = () => {
   return (
     <>
-      <div className="bottom_head_nav">
+      <div className="bottom_head_nav sm:invisible max-sm:invisible lg:visible">
         <div className="logo_with_btn">
           <img src={Logo} alt="nav-logo" className="cursor-pointer" />
           {/* <button className="explore_btns_nav">
