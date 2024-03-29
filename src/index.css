@@ -1,13 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-*{
+* {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  font-family: 'Noto Sans', sans-serif;
-  font-family: 'Poppins', sans-serif;
-  }
+  font-family: "Noto Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
 
 .Expert .swiper  img{
   /* border-radius: 160px  160px 160px 160px; */

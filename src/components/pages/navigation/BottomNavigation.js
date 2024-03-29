@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-// import "../../css/navigation.css";
-import  "../../../css/navigation.css"
+import "../../../css/navigation.css";
 import Logo from "../../../images/Logo.png";
 import downArrow from "../../../images/downArrow.png";
 import search from "../../../images/search.png";
@@ -12,14 +10,14 @@ const BottomNav = () => {
     <>
       <div className="bottom_head_nav">
         <div className="logo_with_btn">
-            <img src={Logo} alt="nav-logo" className="cursor-pointer" />
+          <img src={Logo} alt="nav-logo" className="cursor-pointer" />
           {/* <button className="explore_btns_nav">
             Explore{" "}
             <span className="down_arrow">
               <img src={downArrow} alt="downarrow" />
             </span>
           </button> */}
-    
+
           {/* <div class="inline-block ml-10">
   <select class="block  w-full bg-customBlue text-bgWhite  px-2 py-3 pr-8 rounded shadow leading-tight focus:outline-none focus:border-blue-500">
     <option>Explore</option>
@@ -27,16 +25,15 @@ const BottomNav = () => {
   </select>
   
 </div> */}
-<div class="inline-block ml-10 relative">
-  <select   class=" font-semibold block cursor-pointer appearance-none  bg-customBlue text-bgWhite px-2 py-3 pr-10 rounded shadow leading-tight focus:outline-none focus:border-blue-500 w-21">
-    <option>Explore</option>
-    <option>LMS Data</option>
-  </select>
-  <div class="pointer-events-none absolute inset-y-0 right-2 flex items-center pr-2 text-gray-700">
-    <img src={downArrow} alt="downarrow" />
-  </div>
-</div>
-
+          <div class="inline-block ml-10 relative">
+            <select class=" font-semibold block cursor-pointer appearance-none  bg-customBlue text-bgWhite px-2 py-3 pr-10 rounded shadow leading-tight focus:outline-none focus:border-blue-500 w-21">
+              <option>Explore</option>
+              <option>LMS Data</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-2 flex items-center pr-2 text-gray-700">
+              <img src={downArrow} alt="downarrow" />
+            </div>
+          </div>
           <input
             className="input_search__nav"
             type="text"
@@ -46,10 +43,16 @@ const BottomNav = () => {
             <img src={search} alt="search-image" />
           </span>
         </div>
-        <div className="btns_nav">
+        <div>
           <Navigation />
+        </div>
+        <div className="btns_nav">
           <button className="login_btn_nav">Login</button>
-          <JoinFreeBtn title={"Join for Free"} />
+          <JoinFreeBtn
+            title={"Join for Free"}
+            bgColor={"bg-blue-600"}
+            color={"text-white"}
+          />
         </div>
       </div>
     </>
