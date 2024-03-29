@@ -8,6 +8,7 @@ import AdvertizeTwo from "./components/pages/AdvertizeTwo";
 import NewTeacherCool from "./components/pages/NewTeacherCool";
 import CourseToday from "./components/pages/CourseToday";
 import TeacherCoolCourses from "./components/pages/TeacherCoolCourses";
+import FrequentlyAskQuest from "./components/pages/FrequentlyAskQuest";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <AdvertizeTwo />
         <CourseToday />
         <TeacherCoolCourses />
+        <FrequentlyAskQuest/>
       </BrowserRouter>
     </div>
   );
