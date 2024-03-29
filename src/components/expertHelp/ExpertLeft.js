@@ -29,7 +29,7 @@ const expertabs = [
         <div className="">
         <div >
           <div class="container mx-auto ">
-            <div class="grid grid-cols-1 lg:grid-cols-1 gap-4">
+            <div class="grid grid-cols-1 lg:grid-cols-1  gap-4">
               <div>
                 <form class="bg-white  px-1 pt-6 pb-8 mb-4">
                   <div class="grid grid-cols-2 gap-4">

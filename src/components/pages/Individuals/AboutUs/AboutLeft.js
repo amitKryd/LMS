@@ -2,9 +2,12 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import img1 from "../../images/Frame 102 .png"
-import img2 from "../../images/compo2.jpg"
-import img3 from "../../images/comp.jpg";
+
+import img2 from "../../../../images/image (1).png"
+import img3 from "../../../../images/compo2.jpg";
+import img1 from "../../../../images/Group 7.png"
+
+
 
 // Import Swiper styles
 import 'swiper/css';
@@ -15,10 +18,10 @@ import 'swiper/css/effect-cards';
 // import required modules
 import { Autoplay, EffectCards, EffectFade, Navigation, Pagination } from 'swiper/modules';
 
-export const ExpertRight = () =>{
+export const AboutLeft = () =>{
   return (
     <>
-      <div className='Expert container mx-10 mt-10'>
+      <div className='About container mx-16 '>
       <Swiper
           effect={'fade'}
         autoplay={{
@@ -48,8 +51,6 @@ export const ExpertRight = () =>{
                 />
             </div>
         </SwiperSlide>
-        
-     
         
       </Swiper>
       </div>

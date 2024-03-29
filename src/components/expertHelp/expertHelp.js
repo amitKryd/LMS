@@ -5,13 +5,12 @@ import { ExpertRight } from "./ExpertRight";
 export const ExpertHelp = () =>{
     return(
         <>
-        <div class="container mx-auto grid lg:grid-cols-8 sm:lg:grid-cols-1 gap-4 mt-10 mb-5 px-8">
-
-          <div class="col-span-5 ">
+        <div class="container mx-auto grid lg:grid-cols-8 md:grid-cols-8 sm:grid-cols-1  max-sm:grid-cols-1 gap-4 mt-10 mb-5 px-8">
+          <div class="md:col-span-5 ">
           <ExpertLeft/>
           </div>
 
-            <div class="col-span-3 ">
+            <div class="md:col-span-3 ">
             <ExpertRight/>
             </div>
 
