@@ -1,7 +1,6 @@
 import React from "react";
 import SecondaryButton from "../button/SecondaryButton";
 import CardOne from "../card/CardOne";
-import JoinFreeBtn from "../button/PrimaryButton";
 
 const NewTeacherCool = () => {
   const data = [
@@ -30,13 +29,15 @@ const NewTeacherCool = () => {
     {
       img: "Media two.png",
       title: "Artificial Intelligence",
-      about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      about:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       btnText: "Beginner Course",
     },
     {
       img: "Media three.png",
       title: "Cyber Security",
-      about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      about:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       btnText: "Beginner Course",
     },
   ];
@@ -53,14 +54,11 @@ const NewTeacherCool = () => {
           </p>
           <SecondaryButton data={data} />
           <CardOne dataOne={dataOne} />
-{/* <JoinFreeBtn
-title={"View all Courses"}
-bgColor={"bg-gray-600"}
-color={"text-blue-500"}
-/> */}
-<div className="pt-10 py-6">
-<button className="bg-white text-blue-500 rounded-md text-base px-5 h-10 cursor-pointer border border-solid border-blue-400">View all courses <span>&raquo;</span></button>
-</div>
+          <div className="pt-10 py-6">
+            <button className="bg-white text-blue-500 rounded-md text-base px-5 h-10 cursor-pointer border border-solid border-blue-400">
+              View all courses <span>&raquo;</span>
+            </button>
+          </div>
         </div>
       </div>
     </>
@@ -68,5 +66,3 @@ color={"text-blue-500"}
 };
 
 export default NewTeacherCool;
-
-

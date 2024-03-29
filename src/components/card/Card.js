@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Card = (props) => {
   return (
     <>
-      <div className="flex  gap-12 max-xl:gap-5  ">
+      <div className="flex  gap-12 max-xl:gap-5 max-sm:flex-col max-sm:gap-2 ">
         {props?.data?.map((item, ind) => {
           return (
             <>

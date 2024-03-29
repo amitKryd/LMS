@@ -15,14 +15,14 @@ const Hero = () => {
         <div>
           <h1 className="learn_without_hero">Learn Without Limits</h1>
         </div>
-        <div className="lorem_title_nav">
-          <p className="heading_title_nav">
+        <div className="max-w-[600px] mx-auto flex justify-center items-center pt-5 max-sm:mx-2">
+          <p className="text-center text-gray-700 break-words text-wrap">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
             suscipit rhoncus nunc id aliquet. Vestibulum ante ipsum primis in
             faucibus orci luctus et ultrices posuere cubilia
           </p>
         </div>
-        <div className="btn_part_hero">
+        <div className="flex justify-center items-center my-10 mx-0 gap-10 max-sm:flex-col max-sm:gap-5">
           <JoinFreeBtn title={"Join for Free"} bgColor={"bg-blue-600"} color={"text-white"} />
           <button className="try_coolBtn_hero">
             Try CoolTeacher for Universities

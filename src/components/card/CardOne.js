@@ -5,24 +5,22 @@ import { motion } from "framer-motion";
 const CardOne = (props) => {
   return (
     <>
-      <div className="flex justify-between items-center   gap-12">
+      <div className="flex  flex-wrap       justify-between">
         {props?.dataOne?.map((item, ind) => {
           return (
             <>
               <motion.div
                 whileHover={{ scale: 1.1 }} // Scale up and move up when hovered
-                // whileTap={{ scale: 0.3 }} // Scale down when tapped (clicked)
                 transition={{ duration: 0.5 }} // Smooth transition duration
               >
-                <div className="mt-4 border-solid  w-100 min-h-96  border border-gray-200 shadow-md rounded-lg">
-                <img
-    className="w-full h-72 rounded-t-lg object-cover"
-    src={process.env.PUBLIC_URL + `/images/${item?.img}`}
-    alt="card-image"
-/>
+                <div className="mt-4 border-solid  w-[280px] min-h-50  border border-gray-200 shadow-md rounded-lg">
+                  <img
+                    className="w-full max-h-30 rounded-t-lg object-contain"
+                    src={process.env.PUBLIC_URL + `/images/${item?.img}`}
+                    alt="card-image"
+                  />
 
                   <div className="py-3 pl-3">
-                    
                     <h2 className="font-semibold text-sm text-gray-900 pt-3">
                       {item?.title}
                     </h2>
@@ -30,13 +28,12 @@ const CardOne = (props) => {
                       {item?.about}
                     </p>
                     <div className="pt-5 pb-3">
-                    <JoinFreeBtn
-                      title={"Begineer Course"}
-                      bgColor={"bg-gray-600"}
-                      color={"text-white"}
-                      className="px-[10px]"
-                    />
-                    
+                      <JoinFreeBtn
+                        title={"Begineer Course"}
+                        bgColor={"bg-gray-600"}
+                        color={"text-white"}
+                        className="px-[10px]"
+                      />
                     </div>
                   </div>
                 </div>

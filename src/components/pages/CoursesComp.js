@@ -105,7 +105,7 @@ const DataAnalyst = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
             suscipit rhoncus nunc id{" "}
           </p>
-          <div className="mt-10 mb-2 flex flex-row justify-between  gap-[100px] max-xl:gap-[100px] max-lg:flex-col max-lg:items-center">
+          <div className="mt-10 mb-2 flex flex-row justify-between  gap-[100px] max-xl:gap-[100px] max-lg:flex-col max-lg:items-center max-lg:gap-5">
             <div className="min-w-40">
               <img src={roundedbar}  alt="graph" className="pb-8" />
               <hr  className="border-gray-300  m-auto h-4  " />
