@@ -6,9 +6,9 @@ import { AboutUs } from "./AboutUs/aboutUs";
 import NewTeacherCool from "../NewTeacherCool";
 import CourseToday from "../CourseToday";
 import WhyChooseCourses from "../WhyChooseCourses";
-import AdvertizeTwo from "../AdvertizeTwo";
+import AdvertizeTwo from "../../Advertize/AdvertizeTwo";
 import TeacherCoolCourses from "../TeacherCoolCourses";
-import FrequentlyAskQuest from "../FrequentlyAskQuest";
+import FrequentlyAskQuest from "../../FrequentlyAskQuestion/FrequentlyAskQuest";
 
 
 export const Individual = () =>{
