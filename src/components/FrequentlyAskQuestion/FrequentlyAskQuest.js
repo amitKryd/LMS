@@ -7,7 +7,7 @@ const FrequentlyAskQuest = () => {
   };
   return (
     <div className="bg-orange-100 pb-10 pt-20">
-      <div className="w-[70vw] min-h-0 flex items-center  justify-center flex-col m-auto  ">
+      <div className="container mx-auto min-h-0 flex items-center  flex-col   ">
         <h1 className="text-4xl font-bold mb-4">Frequently asked questions</h1>
         {[1, 2, 3, 4, 5, 6, 7].map((item, index) => {
           return (
