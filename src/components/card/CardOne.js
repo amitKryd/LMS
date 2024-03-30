@@ -5,15 +5,16 @@ import { motion } from "framer-motion";
 const CardOne = (props) => {
   return (
     <>
-      <div className="flex gap-12 items-center max-lg:flex-wrap max-lg:justify-center ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 py-5 ">
         {props?.dataOne?.map((item, ind) => {
           return (
             <>
               <motion.div
+              className="mt-4 border-solid min-h-16 border border-gray-200 shadow-md rounded-lg"
                 whileHover={{ scale: 1.1 }} // Scale up and move up when hovered
-                transition={{ duration: 0.5 }} // Smooth transition duration
+                transition={{ duration: 0.9 }} // Smooth transition duration
               >
-                <div className="mt-4 border-solid  w-full max-lg:max-w-[350px] min-h-50  border border-gray-200 shadow-md rounded-lg">
+                
                   <img
                     className="w-full max-h-30 rounded-t-lg object-contain"
                     src={process.env.PUBLIC_URL + `/images/${item?.img}`}
@@ -36,7 +37,7 @@ const CardOne = (props) => {
                       />
                     </div>
                   </div>
-                </div>
+                
               </motion.div>
             </>
           );

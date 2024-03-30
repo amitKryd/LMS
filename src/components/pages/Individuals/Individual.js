@@ -14,7 +14,6 @@ import FrequentlyAskQuest from "../../FrequentlyAskQuestion/FrequentlyAskQuest";
 export const Individual = () =>{
     return(
       <>
-      
        <Hero  />
        <ExpertHelp/>
        <CoursesComp  />  
@@ -25,7 +24,6 @@ export const Individual = () =>{
         <CourseToday />
         <TeacherCoolCourses />
         <FrequentlyAskQuest/>
-       
       </>
     )
 }
