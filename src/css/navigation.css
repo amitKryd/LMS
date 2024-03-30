@@ -1,6 +1,3 @@
-.main_navigation_div {
-  background-color: #0a1e44;
-}
 .navigate_header {
   display: flex;
   gap: 20px;
@@ -22,13 +19,7 @@
   width: 8%;
   height: 2px; 
   background-color: blue; 
-} */
-
-
-
-
-
-
+}
 /* .bottom_head_nav {
   background-color: #fff;
   margin: 8px 20px;
@@ -42,8 +33,8 @@
  /* .logo_with_btn {
   display: flex;
   align-items: center;
-}
-.explore_btns_nav {
+}  */
+ .explore_btns_nav {
   background-color: #0966ed;
   padding: 12px 40px 12px 13px;
   color: #fff;
@@ -93,5 +84,20 @@
     background-color: #0966ed;
     height: 40px;
     border-radius: 4px;
+
   
 }
+
+
+/* .joinforFree_btn_nav{
+    border: none;
+    background-color: #0966ed;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff;
+    height: 40px;
+    padding: 0px 20px;
+    cursor: pointer;
+} */
+
+
