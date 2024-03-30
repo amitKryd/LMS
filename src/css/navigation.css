@@ -1,6 +1,5 @@
 .main_navigation_div {
   background-color: #0a1e44;
-  /* height: 40px; */
 }
 .navigate_header {
   display: flex;
@@ -34,7 +33,6 @@
 .logo_with_btn {
   display: flex;
   align-items: center;
-  /* gap: 20px; */
 }
 .explore_btns_nav {
   background-color: #0966ed;
@@ -84,16 +82,5 @@
     background-color: #0966ed;
     height: 40px;
     border-radius: 4px;
-    /* transition-delay:1s; */
+  
 }
-/* .joinforFree_btn_nav{
-    border: none;
-    background-color: #0966ed;
-    border-radius: 4px;
-    font-size: 16px;
-    color: #fff;
-    height: 40px;
-    padding: 0px 20px;
-    cursor: pointer;
-} */
-
