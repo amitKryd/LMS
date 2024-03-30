@@ -14,16 +14,18 @@ import FrequentlyAskQuest from "../FrequentlyAskQuest";
 export const Individual = () =>{
     return(
       <>
-       <Hero />
+      <div className="border">
+      <Hero />
        <ExpertHelp/>
        <CoursesComp  />  
        <NewTeacherCool />
        <WhyChooseCourses />
        <AboutUs />
-        <AdvertizeTwo />
+        {/* <AdvertizeTwo /> */}
         <CourseToday />
         <TeacherCoolCourses />
         <FrequentlyAskQuest/>
+      </div>
     
       </>
     )

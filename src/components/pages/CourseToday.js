@@ -34,7 +34,7 @@ const CourseToday = () => {
   ];
   return (
     <>
-      <div className="w-[90%] m-auto pt-5 pb-10">
+      <div className="container mx-auto pt-5 pb-10">
         <div>
           <h2 className="font-bold text-2xl">
             Get Started with your Courses today!

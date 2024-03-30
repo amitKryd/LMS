@@ -6,7 +6,7 @@ const FrequentlyAskQuest = () => {
     setId((prevId) => (prevId === id ? null : id));
   };
   return (
-    <div className="w-[70vw] min-h-0 float-right mb-20  me-20">
+    <div className="container mx-auto min-h-0  ">
       <h1 className="text-4xl font-bold mb-4">Frequently Asked questions</h1>
       {[1, 2, 3, 4, 5, 6].map((item, index) => {
         return (
@@ -55,5 +55,4 @@ const FrequentlyAskQuest = () => {
     </div>
   );
 };
-
 export default FrequentlyAskQuest;
