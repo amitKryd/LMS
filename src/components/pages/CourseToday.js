@@ -44,7 +44,7 @@ const CourseToday = () => {
             industry.
           </p>
         </div>
-        <div className=" grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 gap-5 py-5 ">
+        <div className=" grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 gap-5 py-5 max-sm:justify-items-center ">
           <Card data={data} />
         </div>
       </div>

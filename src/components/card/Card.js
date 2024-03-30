@@ -14,7 +14,7 @@ const Card = (props) => {
                 // whileTap={{ scale: 0.3 }} // Scale down when tapped (clicked)
                 transition={{ duration: 0.9 }} // Smooth transition duration
               >
-                <div className="mt-4 border-solid  w-full max-lg:max-w-[350px] min-h-96  border border-gray-200 shadow-md rounded-lg">
+                <div className="mt-4 border-solid  w-full max-lg:max-w-[380px] min-h-96  border border-gray-200 shadow-md rounded-lg">
                   <img
                     className="w-full h-72 rounded-t-lg object-cover"
                     src={item?.img}

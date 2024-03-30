@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const CardOne = (props) => {
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 py-5 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 py-5 max-sm:m-6 ">
         {props?.dataOne?.map((item, ind) => {
           return (
             <>
