@@ -46,12 +46,13 @@ const NewTeacherCool = () => {
       <div className="container mx-auto py-10">
         <div>
           <h2 className="font-bold text-2xl">
-            <span className="text-blue-500">New</span> on TeacherCool
+            <span className="text-blue-500 max-sm:px-3">New</span> on TeacherCool
           </h2>
-          <p className="text-sm pt-1 text-gray-600 pr-1">
+          <p className="text-sm pt-1 text-gray-600 pr-1 max-sm:px-3">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
           </p>
+          
           <SecondaryButton data={data} />
           <CardOne dataOne={dataOne} />
           <div className="pt-10 py-6">

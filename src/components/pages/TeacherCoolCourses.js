@@ -58,10 +58,10 @@ const TeacherCoolCourses = () => {
     <>
       <div className="container  mx-auto py-10 max-sm:px-4">
         <div>
-          <h2 className="font-bold text-2xl">
+          <h2 className="font-bold text-2xl max-sm:px-3">
             Explore TeacherCool <span className="text-blue-500">Courses</span>
           </h2>
-          <p className="text-sm pt-1 text-gray-600 pr-1">
+          <p className="text-sm pt-1 text-gray-600 pr-1 max-sm:px-3">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
           </p>
