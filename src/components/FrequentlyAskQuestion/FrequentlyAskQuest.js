@@ -20,7 +20,7 @@ const FrequentlyAskQuest = () => {
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Quisque suscipit rhoncus nunc id aliquet.Lorem ipsum dolor sit
-                  amet, consectetur adipiscing elit...
+                  amet
                 </p>
                 <IoIosArrowDown
                   className={`cursor-pointer text-2xl  ${
@@ -32,7 +32,7 @@ const FrequentlyAskQuest = () => {
                 />
               </div>
               {id == item && (
-                <div className="border-2 rounded-lg border-gray-200 p-4 mb-4 bg-white">
+                <div className="border rounded-lg border-gray-200 p-4 mb-4 bg-white">
                   <p>
                     This is the first item's accordion body. It is shown by
                     default, until the collapse plugin adds the appropriate
