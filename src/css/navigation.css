@@ -12,7 +12,7 @@
   color: black;
   cursor: pointer;
 }
-.navigate_header .active::after {
+/* .navigate_header .active::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -20,7 +20,13 @@
   width: 8%;
   height: 2px; 
   background-color: blue; 
-}
+} */
+
+
+
+
+
+
 /* .bottom_head_nav {
   background-color: #fff;
   margin: 8px 20px;

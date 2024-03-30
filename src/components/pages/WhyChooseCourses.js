@@ -2,9 +2,9 @@ import React from "react";
 
 const WhyChooseCourses = () => {
   return (
-    <div className="container mx-auto mb-4 mt-4 flex justify-between lg:flex-row sm:flex-col gap-4 max-sm:flex-col">
+    <div className="container mx-auto mb-4 mt-4 flex justify-between lg:flex-row sm:flex-col gap-4 max-sm:flex-col px-4">
       <div className="container">
-        <h1 className="text-6xl font-bold pb-4">
+        <h1 className="text-6xl max-sm:text-4xl font-bold pb-4">
           Why Choose Our Courses
         </h1>
         <p className="text-gray-500 text-sm pb-4">
