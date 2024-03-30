@@ -21,7 +21,7 @@ import { Autoplay, EffectCards, EffectFade, Navigation, Pagination } from 'swipe
 export const AboutLeft = () =>{
   return (
     <>
-      <div className='About container mx-16 '>
+      <div className='About container  '>
       <Swiper
           effect={'fade'}
         autoplay={{
@@ -39,12 +39,11 @@ export const AboutLeft = () =>{
       
         grabCursor={true}
 
-       
         className="mySwiper  ">
       
         <SwiperSlide  >
             <div>
-                <img className='min-h-[600px] rounded-t-full rounded-b-full border-2 border-gray-800   w-75'
+                <img className='min-h-[500px] max-h-[500px] max-sm:w-[280px]'
                     src={img1}
                     class=""
                     alt=""

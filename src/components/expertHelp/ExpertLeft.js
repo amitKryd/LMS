@@ -149,13 +149,13 @@ export const Tabs = ({ tabs }) => {
 
   return (
     <div className="flex flex-col mt-3">
-      <ul className="flex mb-3 flex-wrap gap-4">
+      <ul className="flex mb-3 flex-wrap max-sm:justify-center gap-4">
         {tabs.map(tab => (
           <li key={tab.id} className="mr-1">
             <button
               className={`${
-                activeTab === tab.id ? 'bg-blue-500 border-blue-500 text-white' : 'bg-white'
-              } text-gray-700 px-4 py-2 rounded-full border-gray-300 border-[2px] font-medium`}
+                activeTab === tab.id ? 'bg-blue-500  border-blue-500 text-white' : 'bg-white'
+              } text-gray-700 px-4 py-2 rounded-full border-gray-300 border-[2px] font-medium max-sm:w-[280px]`}
               onClick={() => handleTabClick(tab.id)}
               aria-selected={activeTab === tab.id ? 'true' : 'false'}
             >

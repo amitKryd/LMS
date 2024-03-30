@@ -18,7 +18,7 @@ import { Autoplay, EffectCards, EffectFade, Navigation, Pagination } from 'swipe
 export const ExpertRight = () =>{
   return (
     <>
-      <div className='Expert container mx-10 mt-10'>
+      <div className='Expert container mt-10'>
       <Swiper
           effect={'fade'}
         autoplay={{
@@ -41,7 +41,7 @@ export const ExpertRight = () =>{
       
         <SwiperSlide  >
             <div>
-                <img className='min-h-[600px] rounded-t-full rounded-b-full border-2 border-gray-800   w-75'
+                <img className='max-sm:min-h-[500px] max-sm:max-h-[500px] min-h-[630px] max-h-[630px] '
                     src={img1}
                     class=""
                     alt=""
