@@ -48,9 +48,6 @@ export const ExpertRight = () =>{
                 />
             </div>
         </SwiperSlide>
-        
-     
-        
       </Swiper>
       </div>
     </>
