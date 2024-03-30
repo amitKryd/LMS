@@ -9,7 +9,7 @@ const SecondaryButton = (props) => {
   return (
     <>
       
-      <div className='flex flex-wrap gap-4 items-center pt-8 pb-3'>
+      <div className='flex flex-wrap gap-4 items-center pt-8 pb-3 max-sm:px-3'>
         {props.data.map((item, index) => (
           <button
             key={index}
