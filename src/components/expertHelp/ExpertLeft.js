@@ -154,8 +154,8 @@ export const Tabs = ({ tabs }) => {
           <li key={tab.id} className="mr-1">
             <button
               className={`${
-                activeTab === tab.id ? 'bg-blue-500  border-blue-500 text-white' : 'bg-white'
-              } text-gray-700 px-4 py-2 rounded-full border-gray-300 border-[2px] font-medium max-sm:w-[280px]`}
+                activeTab === tab.id ? 'bg-blue-600  border-blue-600 text-white' : 'bg-white'
+              } text-gray-700 px-4 py-2 rounded-full hover:bg-blue-500 hover:border-blue-500 hover:text-white  border-gray-300 border-[2px] font-medium max-sm:w-[280px]`}
               onClick={() => handleTabClick(tab.id)}
               aria-selected={activeTab === tab.id ? 'true' : 'false'}
             >

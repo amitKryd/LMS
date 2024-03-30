@@ -29,7 +29,6 @@ export const ExpertRight = () =>{
           clickable: true,
         }}
         loop={true}
-        
         navigation={true}
         
         modules={[Autoplay, Pagination, Navigation, EffectFade]}
@@ -41,7 +40,7 @@ export const ExpertRight = () =>{
       
         <SwiperSlide  >
             <div>
-                <img className='max-sm:min-h-[500px] max-sm:max-h-[500px] min-h-[630px] max-h-[630px] '
+                <img className='max-sm:min-h-[500px] max-sm:max-h-[500px] min-h-[600px] max-h-[660px] '
                     src={img1}
                     class=""
                     alt=""
@@ -53,7 +52,3 @@ export const ExpertRight = () =>{
     </>
   );
 }
-
-
-
-
