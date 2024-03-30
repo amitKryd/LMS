@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Card = (props) => {
   return (
     <>
-      <div className="flex  gap-12 max-xl:gap-5 max-sm:flex-col max-sm:gap-2 ">
+      <div className="flex  gap-12 max-xl:gap-5 max-lg:flex-wrap max-lg:justify-center  max-sm:gap-2 ">
         {props?.data?.map((item, ind) => {
           return (
             <>
@@ -14,7 +14,7 @@ const Card = (props) => {
                 // whileTap={{ scale: 0.3 }} // Scale down when tapped (clicked)
                 transition={{ duration: 0.5 }} // Smooth transition duration
               >
-                <div className="mt-4 border-solid  w-full min-h-96  border border-gray-200 shadow-md rounded-lg">
+                <div className="mt-4 border-solid  w-full max-lg:max-w-[350px] min-h-96  border border-gray-200 shadow-md rounded-lg">
                   <img
                     className="w-full h-72 rounded-t-lg object-cover"
                     src={item?.img}

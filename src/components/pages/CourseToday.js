@@ -8,7 +8,7 @@ const CourseToday = () => {
       title: "Data Science and Machine Learning",
       about: "Lorem ipsum want to secure your future for better fullfillment",
       rating: 8,
-      btnText:"Begineer Course"
+      btnText:"Beginner Course"
     },
     {
       img: "/images/city.png",
@@ -22,24 +22,24 @@ const CourseToday = () => {
       title: "Data Science and Machine Learning",
       about: "Lorem ipsum want to secure your future for better fullfillment",
       rating: 8,
-      btnText:"Begineer Course"
+      btnText:"Beginner Course"
     },
     {
       img: "/images/Media (2).png",
       title: "Data Science and Machine Learning",
       about: "Lorem ipsum want to secure your future for better fullfillment",
       rating: 8,
-      btnText:"Begineer Course"
+      btnText:"Beginner Course"
     },
   ];
   return (
     <>
       <div className="container mx-auto pt-5 pb-10">
         <div>
-          <h2 className="font-bold text-2xl">
+          <h2 className="font-bold text-2xl max-sm:px-3">
             Get Started with your Courses today!
           </h2>
-          <p className="text-sm pt-1 text-gray-600 pr-1 text-wrap">
+          <p className="text-sm pt-1 text-gray-600 pr-1 text-wrap max-sm:px-3">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
           </p>
