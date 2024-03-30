@@ -56,7 +56,7 @@ const TeacherCoolCourses = () => {
   ];
   return (
     <>
-      <div className="w-[90%] m-auto py-10">
+      <div className="container  mx-auto py-10">
         <div>
           <h2 className="font-bold text-2xl">
             Explore TeacherCool <span className="text-blue-500">Courses</span>
