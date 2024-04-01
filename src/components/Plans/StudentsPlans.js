@@ -115,7 +115,7 @@ const StudentsPlans = () => {
             </p>
             <hr className="border"></hr>
             <p className="pb-4 pt-4 flex text-start">
-              <MdCheck className="text-blue-600 text-xl" />
+              <MdCheck className="text-blue-600 text-xl me-2" />
               Enjoy maximum flexibility to achieve <br /> work/life balance and
               learn at your <br /> own pace
             </p>
