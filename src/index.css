@@ -10,26 +10,9 @@
 }
 
 
-.About .swiper  img{
-  height: 500px;
-  
-}
 
-.swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* border-radius: 80px 40px 40px 40px; */
-  font-size: 22px;
-  font-weight: bold;
-  color: #fff;
 
-}
-/* 
-.Expert .swiper-slide:nth-child(1n) img {
-  padding-right: 5px;
-  padding-top: 6px;
-  border: 1px solid #1670F8;
-} */
+
+
 
 

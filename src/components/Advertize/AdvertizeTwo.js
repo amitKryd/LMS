@@ -4,8 +4,9 @@ import JoinFreeBtn from "../button/PrimaryButton";
 const AdvertizeTwo = () => {
   return (
     <>
-      <div className="contianer mx-auto w-full bg-blue-100 h-[509px] relative mb-20">
-        <div className="w-[577px] min-h-[572px]  z-10 left-20  bottom-4 relative">
+      <div className="contianer mx-auto  bg-blue-100 h-[509px] relative mb-20">
+       <div className="flex justify-between gap-10">
+       <div className="w-[577px] min-h-[572px]  z-10 left-20  bottom-4 relative">
           <img
             src={process.env.PUBLIC_URL + "/images/student2.png"}
             alt="no img"
@@ -38,6 +39,7 @@ const AdvertizeTwo = () => {
             className="px-[10px]"
           />
         </div>
+       </div>
         <img
           src={process.env.PUBLIC_URL + "/images/Ellipse 1.png"}
           alt="ellipe"

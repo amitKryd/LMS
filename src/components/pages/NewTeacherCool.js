@@ -43,12 +43,12 @@ const NewTeacherCool = () => {
   ];
   return (
     <>
-      <div className="container mx-auto py-10">
+      <div className="container mx-auto py-10 ">
         <div>
-          <h2 className="font-bold text-2xl">
-            <span className="text-blue-500 max-sm:px-3">New</span> on TeacherCool
+          <h2 className="font-bold sm:text-5xl max-sm:text-4xl max-sm:px-4 ">
+          <span className="text-blue-500">New</span> on TeacherCool
           </h2>
-          <p className="text-sm pt-1 text-gray-600 pr-1 max-sm:px-3">
+          <p className="text-sm pt-3 text-gray-600 pr-1 max-sm:px-3">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
           </p>
