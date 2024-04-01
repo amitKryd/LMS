@@ -67,5 +67,5 @@ const BottomNav = () => {
       </div>
     </>
   );
-};
+          };
 export default BottomNav;
