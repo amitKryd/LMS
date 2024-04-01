@@ -10,7 +10,7 @@ const Navigation = () => {
   return (
     <>
       <div className="">
-        <div className="flex justify-between items-center pt-1">
+        <div className="flex justify-between items-center pt-1 lg:gap-4 ">
           <p
             className={`${
               activeIndex === 0
