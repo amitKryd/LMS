@@ -24,7 +24,7 @@ export const Individual = () => {
       <CourseToday />
       <TeacherCoolCourses />
       <FrequentlyAskQuest />
-      {/* <StudentsPlans /> */}
+      <StudentsPlans />
     </>
   );
 };
