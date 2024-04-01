@@ -1,5 +1,4 @@
 import React from "react";
-
 import { AboutLeft } from "./AboutLeft";
 import { AboutRight } from "./AboutRight";
 

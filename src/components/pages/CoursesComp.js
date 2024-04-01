@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../../css/courses.css";
-import roundedbar from "../../images/roundedbar.png";
-import imageOne from "../../images/ImageOne.png";
+import "../../assests/css/courses.css";
+import roundedbar from "../../assests/images/roundedbar.png";
+import imageOne from "../../assests/images/ImageOne.png";
 import Card from "../card/Card";
 import { NavLink } from "react-router-dom";
 const CoursesComp = () => {

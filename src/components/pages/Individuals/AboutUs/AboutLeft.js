@@ -1,11 +1,11 @@
 
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import img2 from "../../../../images/image (1).png"
-import img3 from "../../../../images/compo2.jpg";
-import img1 from "../../../../images/Group 7.png"
+import img2 from "../../../../assests/images/image (1).png"
+import img3 from "../../../../assests/images/compo2.jpg";
+import img1 from "../../../../assests/images/Group 7.png"
+
 
 
 

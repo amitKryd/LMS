@@ -1,7 +1,7 @@
 import React from "react";
 import JoinFreeBtn from "../button/PrimaryButton";
-import "../../css/hero.css";
-import Group_one from "../../images/Group_one.png";
+import "../../assests/css/hero.css";
+import Group_one from "../../assests/images/Group_one.png";
 import Navigation from "../../components/pages/navigation/TopNavigation";
 
 import { motion } from "framer-motion";

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import "../../../css/navigation.css";
-import Logo from "../../../images/Logo.png";
-import downArrow from "../../../images/downArrow.png";
-import search from "../../../images/search.png";
+import React from "react";
+import "../../../assests/css/navigation.css";
+import Logo from "../../../assests/images/Logo.png";
+import downArrow from "../../../assests/images/downArrow.png";
+import search from "../../../assests/images/search.png";
 import JoinFreeBtn from "../../button/PrimaryButton";
 import Navigation from "./TopNavigation";
 const BottomNav = () => {
