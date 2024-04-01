@@ -1,11 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
 import "../../../assests/css/navigation.css";
 import Logo from "../../../assests/images/Logo.png";
 import downArrow from "../../../assests/images/downArrow.png";
 import search from "../../../assests/images/search.png";
 import JoinFreeBtn from "../../button/PrimaryButton";
 import Navigation from "./TopNavigation";
+import Login from "../login/Login";
 const BottomNav = () => {
+  const [showLoginModal,setShowLoginModal] = useState(false)
+  const handleLoginClick =  () => {
+    setShowLoginModal((data) => !data)
+  }
   return (
     <>
       <div className=" bottom_head_nav sm:invisible max-sm:invisible lg:visible py-3">
@@ -43,7 +48,7 @@ const BottomNav = () => {
 
           
         <div className="btns_nav">
-          <button className="login_btn_nav">Login</button>
+          <button onClick={handleLoginClick}  className="login_btn_nav">Login</button>
           <JoinFreeBtn
             title={"Join for Free"}
             bgColor={"bg-blue-600"}
@@ -53,6 +58,12 @@ const BottomNav = () => {
 
         </div>
    
+        
+          {showLoginModal&& 
+          <div className="fixed inset-0 z-10 flex justify-center items-center bg-black bg-opacity-50">
+            <Login />
+          </div>  }
+        
       </div>
     </>
   );

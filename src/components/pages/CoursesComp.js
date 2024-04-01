@@ -12,7 +12,7 @@ const CoursesComp = () => {
   };
   return (
     <>
-      <div className="container mx-auto main_courses_div">
+      <div className="container mx-auto ">
         <h2 className="font-semibold text-3xl">
           Get Started with your Courses today!
         </h2>
