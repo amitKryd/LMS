@@ -7,7 +7,7 @@ const FrequentlyAskQuest = () => {
   };
   return (
     <div className="bg-orange-100 pb-10 pt-20">
-      <div className="w-[70vw] min-h-0 flex items-center  justify-center flex-col m-auto  ">
+      <div className="container mx-auto min-h-0 flex items-center  flex-col   ">
         <h1 className="text-4xl font-bold mb-4">Frequently asked questions</h1>
         {[1, 2, 3, 4, 5, 6, 7].map((item, index) => {
           return (
@@ -20,7 +20,7 @@ const FrequentlyAskQuest = () => {
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Quisque suscipit rhoncus nunc id aliquet.Lorem ipsum dolor sit
-                  amet, consectetur adipiscing elit...
+                  amet
                 </p>
                 <IoIosArrowDown
                   className={`cursor-pointer text-2xl  ${
@@ -32,7 +32,7 @@ const FrequentlyAskQuest = () => {
                 />
               </div>
               {id == item && (
-                <div className="border-2 rounded-lg border-gray-200 p-4 mb-4 bg-white">
+                <div className="w-[70vw]  border rounded-lg border-gray-200 p-4 mb-4 bg-white">
                   <p>
                     This is the first item's accordion body. It is shown by
                     default, until the collapse plugin adds the appropriate

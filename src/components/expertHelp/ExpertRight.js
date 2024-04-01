@@ -2,9 +2,9 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import img1 from "../../images/Frame 102 .png"
-import img2 from "../../images/compo2.jpg"
-import img3 from "../../images/comp.jpg";
+import img1 from "../../assests/images/Frame 102 .png"
+import img2 from "../../assests/images/compo2.jpg"
+import img3 from "../../assests/images/comp.jpg";
 
 // Import Swiper styles
 import 'swiper/css';

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../../css/courses.css";
-import roundedbar from "../../images/roundedbar.png";
-import imageOne from "../../images/ImageOne.png";
+import "../../assests/css/courses.css";
+import roundedbar from "../../assests/images/roundedbar.png";
+import imageOne from "../../assests/images/ImageOne.png";
 import Card from "../card/Card";
 import { NavLink } from "react-router-dom";
 const CoursesComp = () => {
@@ -114,11 +114,13 @@ const DataAnalyst = () => {
                 <p className="pl-2">82,489</p>
               </div>
             </div>
-            <div className="flex justify-between  flex-col min-w-60 ">
+            <div className="flex justify-between  flex-col  ">
               <h2 className="pt-10 font-semibold ">
                 Recommended Professional Certificates
               </h2>
+              <div className="flex  gap-12 max-xl:gap-5   max-sm:gap-2 max-sm:flex-wrap max-sm:justify-center">
               <Card data={data} />
+              </div>
               <div className="flex justify-end items-center pt-6 pb-4">
               <NavLink to='/' className="font-medium text-base text-gray-900 shadow-md">Explore all courses <span>&raquo;</span></NavLink>
               </div>

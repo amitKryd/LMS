@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import "../../../css/navigation.css";
-import Logo from "../../../images/Logo.png";
-import downArrow from "../../../images/downArrow.png";
-import search from "../../../images/search.png";
+import React from "react";
+import "../../../assests/css/navigation.css";
+import Logo from "../../../assests/images/Logo.png";
+import downArrow from "../../../assests/images/downArrow.png";
+import search from "../../../assests/images/search.png";
 import JoinFreeBtn from "../../button/PrimaryButton";
 import Navigation from "./TopNavigation";
 const BottomNav = () => {
   return (
     <>
       <div className=" bottom_head_nav sm:invisible max-sm:invisible lg:visible py-2">
-        <div className="flex  container mx-auto justify-between items-center">
+        <div className="flex  container mx-auto justify-between items-center xl:flex-row sm:flex-col max-sm:flex-col">
           {/* logo */}
           <div className="logo_with_btn">
             <img src={Logo} alt="nav-logo" className="cursor-pointer" />
@@ -36,6 +36,7 @@ const BottomNav = () => {
               <img src={search} alt="search-image" />
             </span>
           </div>
+          {/* Navlinks */}
           <div>
           <Navigation />
         </div>

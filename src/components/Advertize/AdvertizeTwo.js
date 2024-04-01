@@ -11,7 +11,7 @@ const AdvertizeTwo = () => {
             src={process.env.PUBLIC_URL + "/images/student2.png"}
             alt="no img"
             className="w-[230px] h-[300px] mb-4 ms-8"
-          />
+          />  
           <img
             src={process.env.PUBLIC_URL + "/images/group_study.png"}
             alt="no img"
