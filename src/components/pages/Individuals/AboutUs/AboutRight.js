@@ -1,10 +1,13 @@
 import React from "react";
 import { RiH1 } from "react-icons/ri";
+import img1 from "../../../../assests/images/Ellipse 4.png"
 
 export const AboutRight = () => {
   return (
     <>
-      <h1 className="text-blue-700 text-2xl">About us</h1>
+    <div className=" relative ">
+    <div>
+    <h1 className="text-blue-700 text-2xl">About us</h1>
       <h1 className="text-6xl max-sm:text-4xl font-bold py-3">Who We Are</h1>
       <p className="text-md font-medium text-gray-700 ">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
@@ -23,6 +26,11 @@ export const AboutRight = () => {
       >
         Start Learning Now
       </button>
+    </div>
+      <div className=" absolute  right-[-48px] -z-10 ">
+        <img src={img1} alt="" />
+      </div>
+    </div>
     </>
   );
 };
