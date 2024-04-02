@@ -43,8 +43,8 @@ const Login = (props) => {
 </div>
         </div>
         <span className="block text-sm text-blue-500 ">Forget Password?</span>
-        <button className="bg-blue-500 hover:bg-blue-600 w-[100%] text-white font-semibold py-2 px-4 mt-7 rounded">
-          Login
+        <button className="bg-blue-500 hover:bg-blue-600 w-full text-white font-semi py-2 px-4 mt-7 rounded">
+          Join for Free
         </button>
       </form>
       <div className="mb-4 mt-7 flex">
