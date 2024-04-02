@@ -6,11 +6,14 @@ import search from "../../../assests/images/search.png";
 import JoinFreeBtn from "../../button/PrimaryButton";
 import Navigation from "./TopNavigation";
 import Login from "../login/Login";
+import Signup from "../signup/Signup";
 const BottomNav = () => {
   const [showLoginModal,setShowLoginModal] = useState(false)
+  const [showSignUpPage,setShowSignUpPage] = useState(false)
   const handleLoginClick =  () => {
     setShowLoginModal((data) => !data)
   }
+ 
   return (
     <>
       <div className=" bottom_head_nav sm:invisible max-sm:invisible lg:visible py-3">
@@ -59,10 +62,20 @@ const BottomNav = () => {
         </div>
    
         
-          {showLoginModal&& 
-          <div className="fixed inset-0 z-10 flex justify-center items-center bg-black bg-opacity-50">
-            <Login />
-          </div>  }
+        {showLoginModal && (
+        <div className="fixed inset-0 z-10 flex justify-center items-center bg-black bg-opacity-50">
+          <Login
+            setShowLoginModal={setShowLoginModal}
+            setShowSignUpPage={setShowSignUpPage}
+          />
+        </div>
+      )}
+      
+      {showSignUpPage && (
+        <div className="fixed inset-0 z-10 flex justify-center items-center bg-black bg-opacity-50">
+          <Signup setShowSignUpPage={setShowSignUpPage} />
+        </div>
+      )}
         
       </div>
     </>
