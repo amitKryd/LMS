@@ -20,16 +20,21 @@ const Signup = (props) => {
   const NavigateOnLogin = (e) => {
     props.setShowLoginModal(true)
     props.setShowSignUpPage(false)
+    props.setShowInstructorJoin(false)
   }
   const NextFunction = (e) => {
     e.preventDefault();
     setNextModal((data) => !data);
   };
+  const nextInstructor = (e) => {
+    e.preventDefault()
+    props.setShowInstructorJoin((data) => !data)
+  }
   return (
-    <div className={`absolute bg-white p-6 rounded-lg  top-10 h-[88vh] overflow-y-auto  ${props.instructorJoin ? 'w-1/2' : 'w-96'}`}>
+    <div className={`absolute bg-white p-6 rounded-lg  top-10 h-[88vh] overflow-y-auto  ${props.showInstructorJoin ? 'w-[900px]' : 'w-96'}`}>
       <div
         className="flex justify-end cursor-pointer"
-        onClick={() => props.setShowSignUpPage(false)}
+        onClick={() => { props.setShowSignUpPage(false); props.setShowInstructorJoin(false) }}
       >
         <img src={process.env.PUBLIC_URL + "/images/x.png"} alt="cross" />
       </div>
@@ -43,7 +48,8 @@ const Signup = (props) => {
           </p>
         </div>
       </div>
-      {nextModal === false && (
+      {props.showInstructorJoin ? <NextInstructor /> : ''}
+      {props.showInstructorJoin === false && nextModal === false && (
         <div className="mt-8">
           <p className="block text-sm text-gray-900 font-semibold mb-4">
             Select Category
@@ -141,7 +147,7 @@ const Signup = (props) => {
       ) : (
         ""
       )}
-      {nextModal === true && <NextForm selectedOption={selectedOption} handleChaneIcon={handleChaneIcon} showPassword={showPassword} />}
+      {props.showInstructorJoin === false && nextModal === true && props.showInstructorJoin === false && <NextForm selectedOption={selectedOption} handleChaneIcon={handleChaneIcon} showPassword={showPassword} nextInstructor={nextInstructor} />}
       {nextModal === false && (
         <div>
           <div className="mb-4 mt-7 flex">
@@ -268,6 +274,9 @@ export const RadioWithCheck = (props) => {
 };
 
 export const NextForm = (props) => {
+  const registerStudent =  (e) => {
+    e.preventDefault()
+  }
   return (
     <div className="mt-6">
       <form>
@@ -372,56 +381,56 @@ export const NextForm = (props) => {
           ""
         )}
         {props.selectedOption === "Student" ?
-        <div className="mb-4 mt-1">
-          <label className="block text-sm text-gray-900 font-semibold mb-4">
-            Referal Code
-          </label>
-          <input
-            type="text"
-            className="border bg-[white] text-gray-600 text-sm border-gray-300 rounded-md px-3 py-2 w-full"
-            placeholder="Enter Referal Code"
-          />
-        </div>: props.selectedOption === "Instructor"?
-        <div>
-        <div className="mb-1">
-        <label className="block text-sm text-gray-900 font-semibold mb-4">
-          Password
-        </label>
-        <div className=" relative">
-          <input
-            type={props.showPassword ? "password" : "text"}
-            className="border border-gray-300 rounded-md px-3 py-2 w-full"
-            placeholder="Create password"
-          />
-          <span
-            onClick={props.handleChaneIcon}
-            className="absolute  right-4 bottom-3 cursor-pointer"
-          >
-            {props.showPassword ? <FaRegEye /> : <IoEyeOffOutline />}
-          </span>
-        </div>
-      </div>
-      <span className="block text-sm text-gray-500 ">
-        Between 8 and 72 characters
-      </span>
-      </div>
-      :""
-    }
-    {props.selectedOption === "Instructor"?
-    <div className="mb-1 mt-4">
-    <label className="block text-sm text-gray-900 font-semibold mb-4">
-     Confirm Password
-    </label>
-    <div className=" relative">
-      <input
-        type="password" 
-        className="border border-gray-300 rounded-md px-3 py-2 w-full"
-        placeholder="Enter password"
-      />
-      
-    </div>
-  </div>:""
-}
+          <div className="mb-4 mt-1">
+            <label className="block text-sm text-gray-900 font-semibold mb-4">
+              Referal Code
+            </label>
+            <input
+              type="text"
+              className="border bg-[white] text-gray-600 text-sm border-gray-300 rounded-md px-3 py-2 w-full"
+              placeholder="Enter Referal Code"
+            />
+          </div> : props.selectedOption === "Instructor" ?
+            <div>
+              <div className="mb-1">
+                <label className="block text-sm text-gray-900 font-semibold mb-4">
+                  Password
+                </label>
+                <div className=" relative">
+                  <input
+                    type={props.showPassword ? "password" : "text"}
+                    className="border border-gray-300 rounded-md px-3 py-2 w-full"
+                    placeholder="Create password"
+                  />
+                  <span
+                    onClick={props.handleChaneIcon}
+                    className="absolute  right-4 bottom-3 cursor-pointer"
+                  >
+                    {props.showPassword ? <FaRegEye /> : <IoEyeOffOutline />}
+                  </span>
+                </div>
+              </div>
+              <span className="block text-sm text-gray-500 ">
+                Between 8 and 72 characters
+              </span>
+            </div>
+            : ""
+        }
+        {props.selectedOption === "Instructor" ?
+          <div className="mb-1 mt-4">
+            <label className="block text-sm text-gray-900 font-semibold mb-4">
+              Confirm Password
+            </label>
+            <div className=" relative">
+              <input
+                type="password"
+                className="border border-gray-300 rounded-md px-3 py-2 w-full"
+                placeholder="Enter password"
+              />
+
+            </div>
+          </div> : ""
+        }
         <div className="flex items-center justify-center">
           <input type="checkbox" />
           <p className="text-gray-600 text-[12px] pl-2">
@@ -431,10 +440,201 @@ export const NextForm = (props) => {
             </span>
           </p>
         </div>
-        <button className="bg-blue-500 hover:bg-blue-600 w-full text-white font-semi py-2 px-4 mt-7 rounded">
-          Join for Free
+        <button className="bg-blue-500 hover:bg-blue-600 w-full text-white font-semi py-2 px-4 mt-7 rounded" onClick={props.selectedOption === "Student"?registerStudent:props.nextInstructor}>
+          {props.selectedOption === "Student" ? "Join for Free" : "Next >>"}
         </button>
       </form>
     </div>
   );
 };
+
+
+export const NextInstructor = () => {
+  return (
+    <div>
+      <form className="grid grid-cols-2 gap-4 w-full">
+        <div className="mb-4 mt-6">
+          <label className="block text-sm text-gray-900 font-semibold mb-4">
+            Highest Qualification
+          </label>
+          <div className="relative">
+            <select className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
+              <option value="" disabled selected className="text-gray-600 text-sm">
+                Select Qualification
+              </option>
+              <option value="1" className="text-gray-600 text-sm">
+                Option 1
+              </option>
+              <option value="2" className="text-gray-600 text-sm">
+                Option 2
+              </option>
+              <option value="3" className="text-gray-600 text-sm">
+                Option 3
+              </option>
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <img
+                src={process.env.PUBLIC_URL + `/images/Chevron Down.png`}
+                alt="drop-image"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="mb-4 mt-6">
+          <label className="block text-sm text-gray-900 font-semibold mb-4">
+            Available Hours
+          </label>
+          <div className="relative">
+            <select className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
+              <option value="" disabled selected className="text-gray-600 text-sm">
+                Select Hours
+              </option>
+              <option value="1" className="text-gray-600 text-sm">
+                Option 1
+              </option>
+              <option value="2" className="text-gray-600 text-sm">
+                Option 2
+              </option>
+              <option value="3" className="text-gray-600 text-sm">
+                Option 3
+              </option>
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <img
+                src={process.env.PUBLIC_URL + `/images/Chevron Down.png`}
+                alt="drop-image"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="mb-4 mt-0">
+          <label className="block text-sm text-gray-900 font-semibold mb-4">
+            Expected Income
+          </label>
+          <input
+            type="text"
+            className="border bg-[white] border-gray-300 rounded-md px-3 py-2 w-full  text-gray-600 text-sm"
+            placeholder="Expectation on Income"
+          />
+        </div>
+        <div className="mb-4 mt-0">
+          <label className="block text-sm text-gray-900 font-semibold mb-4">
+            Currency
+          </label>
+          <div className="relative">
+            <select className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
+              <option value="" disabled selected className="text-gray-600 text-sm">
+                Select Currency
+              </option>
+              <option value="1" className="text-gray-600 text-sm">
+                Option 1
+              </option>
+              <option value="2" className="text-gray-600 text-sm">
+                Option 2
+              </option>
+              <option value="3" className="text-gray-600 text-sm">
+                Option 3
+              </option>
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <img
+                src={process.env.PUBLIC_URL + `/images/Chevron Down.png`}
+                alt="drop-image"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="mb-4 mt-0">
+          <label className="block text-sm text-gray-900 font-semibold mb-4">
+            Category
+          </label>
+          <div className="relative">
+            <select className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
+              <option value="" disabled selected className="text-gray-600 text-sm">
+                Select your Category
+              </option>
+              <option value="1" className="text-gray-600 text-sm">
+                Option 1
+              </option>
+              <option value="2" className="text-gray-600 text-sm">
+                Option 2
+              </option>
+              <option value="3" className="text-gray-600 text-sm">
+                Option 3
+              </option>
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <img
+                src={process.env.PUBLIC_URL + `/images/Chevron Down.png`}
+                alt="drop-image"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="mb-4 mt-0">
+          <label className="block text-sm text-gray-900 font-semibold mb-4">
+            Subject Specialization
+          </label>
+          <div className="relative">
+            <select className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
+              <option value="" disabled selected className="text-gray-600 text-sm">
+                Select your Specialization
+              </option>
+              <option value="1" className="text-gray-600 text-sm">
+                Option 1
+              </option>
+              <option value="2" className="text-gray-600 text-sm">
+                Option 2
+              </option>
+              <option value="3" className="text-gray-600 text-sm">
+                Option 3
+              </option>
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <img
+                src={process.env.PUBLIC_URL + `/images/Chevron Down.png`}
+                alt="drop-image"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="mb-0 mt-0">
+          <label className="block text-sm text-gray-900 font-semibold mb-4">
+            Upload ID Proof 
+          </label>
+          <input
+            type="text"
+            className="border bg-[white] border-gray-300 text-gray-600 text-sm rounded-md px-3 py-2 w-full"
+            placeholder="Upload Id proof here"
+          />
+        </div>
+        <div className="mb-0 mt-0">
+          <label className="block text-sm text-gray-900 font-semibold mb-4">
+          Upload Educational Docs 
+          </label>
+          <input
+            type="text"
+            className="border bg-[white] border-gray-300 rounded-md px-3 py-2 w-full text-gray-600 text-sm"
+            placeholder="Upload Documents"
+          />
+        </div>
+        <div className="flex ">
+          <input type="checkbox" />
+          <p className="text-gray-600 text-[12px] pl-2">
+            I agree to the TeacherCool{" "}
+            <span className="text-blue-600 text-[12px]">
+              Privacy policies & Terms
+            </span>
+          </p>
+        </div>
+      </form>
+      <div className="flex justify-center items-center">
+      <button className="bg-blue-500 hover:bg-blue-600  text-white font-semi py-2 w-96 px-4 mt-7 rounded" >
+           Join for Free
+        </button>
+        </div>
+    </div>
+  )
+}
+
+
