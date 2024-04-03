@@ -10,6 +10,7 @@ import Signup from "../signup/Signup";
 const BottomNav = () => {
   const [showLoginModal,setShowLoginModal] = useState(false)
   const [showSignUpPage,setShowSignUpPage] = useState(false)
+  const [showInstructorJoin,setShowInstructorJoin]  = useState(false)
   const handleLoginClick =  () => {
     setShowLoginModal((data) => !data)
   }
@@ -73,7 +74,7 @@ const BottomNav = () => {
       
       {showSignUpPage && (
         <div className="fixed inset-0 z-10 flex justify-center items-center bg-black bg-opacity-50">
-          <Signup setShowSignUpPage={setShowSignUpPage} />
+          <Signup setShowSignUpPage={setShowSignUpPage} setShowLoginModal={setShowLoginModal}  setShowInstructorJoin={setShowInstructorJoin}  showInstructorJoin={showInstructorJoin} />
         </div>
       )}
         
