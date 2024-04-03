@@ -15,7 +15,7 @@ const Login = (props) => {
         props.setShowSignUpPage(true);
     };
   return (
-    <div className="absolute bg-white p-6 rounded-lg w-96 top-10 h-[610px] overflow-y-auto">
+    <div className="absolute bg-white p-6 rounded-lg w-96 top-10 h-[88vh] overflow-y-auto">
       <div className="flex justify-center">
         <h2 className="font-semibold text-gray-900 text-2xl">Welcome Back</h2>
         <div className="absolute right-5 top-7 cursor-pointer" onClick={() => props.setShowLoginModal(false)}>

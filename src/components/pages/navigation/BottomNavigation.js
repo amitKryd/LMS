@@ -73,7 +73,7 @@ const BottomNav = () => {
       
       {showSignUpPage && (
         <div className="fixed inset-0 z-10 flex justify-center items-center bg-black bg-opacity-50">
-          <Signup setShowSignUpPage={setShowSignUpPage} />
+          <Signup setShowSignUpPage={setShowSignUpPage} setShowLoginModal={setShowLoginModal} />
         </div>
       )}
         

@@ -17,12 +17,16 @@ const Signup = (props) => {
   const handleChaneIcon = () => {
     setShowPassword((data) => !data);
   };
+  const NavigateOnLogin = (e) => {
+    props.setShowLoginModal(true)
+    props.setShowSignUpPage(false)
+  }
   const NextFunction = (e) => {
     e.preventDefault();
     setNextModal((data) => !data);
   };
   return (
-    <div className="absolute bg-white p-6 rounded-lg w-96 top-10 h-[610px] overflow-y-auto">
+    <div className="absolute bg-white p-6 rounded-lg w-96 top-10 h-[88vh] overflow-y-auto">
       <div
         className="flex justify-end cursor-pointer"
         onClick={() => props.setShowSignUpPage(false)}
@@ -164,7 +168,7 @@ const Signup = (props) => {
       )}
       <div className="flex justify-center items-center mt-4 mb-6">
         <p className="text-gray-500">
-          Already on TeacherCool?<span className="text-blue-600 ">Login</span>
+          Already on TeacherCool?<span className="text-blue-600 cursor-pointer" onClick={NavigateOnLogin}>Login</span>
         </p>
       </div>
     </div>
@@ -404,7 +408,7 @@ export const NextForm = (props) => {
       :""
     }
     {props.selectedOption === "Instructor"?
-    <div className="mb-1">
+    <div className="mb-1 mt-4">
     <label className="block text-sm text-gray-900 font-semibold mb-4">
      Confirm Password
     </label>
