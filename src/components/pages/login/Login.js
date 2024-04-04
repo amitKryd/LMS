@@ -18,6 +18,9 @@ const [verifyEmail,setVerifyEmail] = useState(false)
   const handleForgetPassword = () => {
     props.setForgetPassword(true)
   }
+  const handleCloseIcon = () => {
+    props.setShowLoginModal(false)
+  }
   return (
 
     <div className="absolute bg-white p-6 rounded-lg w-96 top-10 h-[88vh] overflow-y-auto">
@@ -26,7 +29,7 @@ const [verifyEmail,setVerifyEmail] = useState(false)
           <div className="flex justify-center">
 
             <h2 className="font-semibold text-gray-900 text-2xl">Welcome Back</h2>
-            <div className="absolute right-5 top-7 cursor-pointer" onClick={() => props.setShowLoginModal(false)}>
+            <div className="absolute right-5 top-7 cursor-pointer" onClick={handleCloseIcon}>
               <img src={process.env.PUBLIC_URL + "/images/x.png"} alt="cross" />
             </div>
           </div>
@@ -43,11 +46,11 @@ const [verifyEmail,setVerifyEmail] = useState(false)
               <label className="block text-sm text-gray-900 font-semibold mb-4">Password</label>
               <div className=" relative">
                 <input
-                  type={showPassword ? "password" : "text"}
+                  type={showPassword ? "text" : "password"}
                   className="border border-gray-300 rounded-md px-3 py-2 w-full"
                   placeholder="Password"
                 />
-                <span onClick={handleChaneIcon} className="absolute  right-4 bottom-3 cursor-pointer">{showPassword ? <FaRegEye /> : <IoEyeOffOutline />}</span>
+                <span onClick={handleChaneIcon} className="absolute  right-4 bottom-3 cursor-pointer">{showPassword ? <IoEyeOffOutline /> : <FaRegEye />}</span>
               </div>
             </div>
             <span className="block text-sm text-blue-500 cursor-pointer" onClick={handleForgetPassword}>Forget Password?</span>

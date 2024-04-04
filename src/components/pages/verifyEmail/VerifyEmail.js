@@ -10,13 +10,18 @@ const VerifyEmail = (props) => {
     const handleNewPasswordCard = () => {
         setShowNewPasswordCard((data) => !data)
     }
+    const handleCloseIcon = () => {
+        props.setShowLoginModal(false);
+        props.setVerifyEmail(false)
+        props.setForgetPassword(false)
+    }
     return (
         <div>
             {showNewPasswordCard === false ?
                 <div>
                     <div
                         className="flex justify-end cursor-pointer"
-                       onClick={() =>  {props.setShowLoginModal(false);props.setVerifyEmail(false) }}
+                       onClick={handleCloseIcon}
                     >
                         <img src={process.env.PUBLIC_URL + "/images/x.png"} alt="cross" />
                     </div>
@@ -39,7 +44,7 @@ const VerifyEmail = (props) => {
                         </button>
                     </div>
                 </div>
-                : <NewPassword setShowLoginModal={props.setShowLoginModal} setShowNewPasswordCard={setShowNewPasswordCard} />}
+                : <NewPassword setShowLoginModal={props.setShowLoginModal} setShowNewPasswordCard={setShowNewPasswordCard} setVerifyEmail={props.setVerifyEmail} setForgetPassword={props.setForgetPassword} />}
         </div>
     )
 }
