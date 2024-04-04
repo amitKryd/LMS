@@ -20,7 +20,7 @@ export const Individual = () => {
       <NewTeacherCool />
       <WhyChooseCourses />
       <AboutUs />
-      {/* <AdvertizeTwo /> */}
+      <AdvertizeTwo />
       <CourseToday />
       <TeacherCoolCourses />
       <FrequentlyAskQuest />

@@ -27,7 +27,7 @@ export const AboutRight = () => {
         Start Learning Now
       </button>
     </div>
-      <div className=" absolute  right-[-48px] -z-10 ">
+      <div className=" absolute  right-[-48px] max-sm:top-[200px] max-sm:right-[-15px] -z-10 ">
         <img src={img1} alt="" />
       </div>
     </div>

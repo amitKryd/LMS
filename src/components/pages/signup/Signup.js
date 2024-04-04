@@ -25,6 +25,7 @@ const Signup = (props) => {
     e.preventDefault();
     setNextModal((data) => !data);
   };
+
   return (
     <div className={`absolute bg-white p-6 rounded-lg  top-10 h-[88vh] overflow-y-auto  ${props.instructorJoin ? 'w-1/2' : 'w-96'}`}>
       <div
@@ -141,6 +142,7 @@ const Signup = (props) => {
       ) : (
         ""
       )}
+      
       {nextModal === true && <NextForm selectedOption={selectedOption} handleChaneIcon={handleChaneIcon} showPassword={showPassword} />}
       {nextModal === false && (
         <div>
