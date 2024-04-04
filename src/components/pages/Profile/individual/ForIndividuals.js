@@ -1,6 +1,10 @@
 import React from "react";
 import BottomNav from "../../navigation/BottomNavigation";
 import { MdOutlineLogout } from "react-icons/md";
+import { NavLink } from "react-router-dom";
+import { RoutePaths } from "../../../../route/RoutePath";
+import CoursesComp from "../../CoursesComp";
+import Courses from "./Courses";
 const ForIndividuals = () => {
   console.log("individual");
   return (
@@ -18,35 +22,37 @@ const ForIndividuals = () => {
           <div className="mt-5 mb-20">
             <ul>
               <li className="hover:bg-blue-600 hover:text-white ps-10 p-4 text-xl hover:cursor-pointer">
-                <a>Profile</a>
+                <a href="#">Profile</a>
               </li>
               <li className="hover:bg-blue-600 hover:text-white ps-10 p-4 text-xl hover:cursor-pointer">
-                <a>My Course</a>
+                <a href="#">My Course</a>
               </li>{" "}
               <li className="hover:bg-blue-600 hover:text-white ps-10 p-4 text-xl hover:cursor-pointer">
-                <a>My Subscriptions</a>
+                <a href="#">My Subscriptions</a>
               </li>{" "}
               <li className="hover:bg-blue-600 hover:text-white ps-10 p-4 text-xl hover:cursor-pointer">
-                <a>Accomplishments</a>
+                <a href="#">Accomplishments</a>
               </li>{" "}
               <li className="hover:bg-blue-600 hover:text-white ps-10 p-4 text-xl hover:cursor-pointer">
-                <a>Updates</a>
+                <a href="#">Updates</a>
               </li>
               <li className="hover:bg-blue-600 hover:text-white ps-10 p-4 text-xl hover:cursor-pointer">
-                <a>Settings</a>
+                <a href="#">Settings</a>
               </li>
               <li className="hover:bg-blue-600 hover:text-white ps-10 p-4 text-xl hover:cursor-pointer">
                 <a>Help Center</a>
               </li>
               <li className="ps-10 p-4 text-xl hover:cursor-pointer text-red-600">
-                <a className="flex items-center">
+                <a href="#" className="flex items-center">
                   Log out <MdOutlineLogout className="ms-3" />{" "}
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div className="w-[80%]"></div>
+        <div className="w-[80%]">
+          <Courses />
+        </div>
       </div>
     </>
   );
