@@ -5,6 +5,8 @@ import { FaRegEye, FaCheck } from "react-icons/fa6";
 import { IoEyeOffOutline } from "react-icons/io5";
 import { FiEdit2 } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
+import { MdOutlineFileUpload } from "react-icons/md";
+
 
 const Signup = (props) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -107,7 +109,7 @@ const Signup = (props) => {
             onClick={NextFunction}
             className="bg-blue-500 hover:bg-blue-600 w-[100%] text-white font-semibold py-2 px-4 mt-7 rounded"
           >
-            <span className="pr-2">Next </span> >>
+            <span className="pr-2">Next </span> <span>&raquo;</span>
           </button>
         </form>
       ) : nextModal === false && selectedOption === "Instructor" ? (
@@ -137,7 +139,7 @@ const Signup = (props) => {
             onClick={NextFunction}
             className="bg-blue-500 hover:bg-blue-600 w-[100%] text-white font-semibold py-2 px-4 mt-7 rounded"
           >
-            <span className="pr-2">Next </span> >>
+            <span className="pr-2">Next </span> <span>&raquo;</span>
           </button>
         </form>
       ) : nextModal === false && selectedOption === "Universities" ? (
@@ -598,7 +600,7 @@ export const NextInstructor = () => {
             </div>
           </div>
         </div>
-        <div className="mb-0 mt-0">
+        <div className="mb-0 mt-0 relative">
           <label className="block text-sm text-gray-900 font-semibold mb-4">
             Upload ID Proof 
           </label>
@@ -607,8 +609,9 @@ export const NextInstructor = () => {
             className="border bg-[white] border-gray-300 text-gray-600 text-sm rounded-md px-3 py-2 w-full"
             placeholder="Upload Id proof here"
           />
+          <span className="absolute right-2 bottom-2"><MdOutlineFileUpload className="block text-blue-600 text-[22px]" /></span>
         </div>
-        <div className="mb-0 mt-0">
+        <div className="mb-0 mt-0 relative">
           <label className="block text-sm text-gray-900 font-semibold mb-4">
           Upload Educational Docs 
           </label>
@@ -617,6 +620,7 @@ export const NextInstructor = () => {
             className="border bg-[white] border-gray-300 rounded-md px-3 py-2 w-full text-gray-600 text-sm"
             placeholder="Upload Documents"
           />
+           <span className="absolute right-2 bottom-2"><MdOutlineFileUpload className="block text-blue-600 text-[22px]" /></span>
         </div>
         <div className="flex ">
           <input type="checkbox" />
