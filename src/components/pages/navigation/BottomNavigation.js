@@ -11,6 +11,7 @@ const BottomNav = () => {
   const [showLoginModal,setShowLoginModal] = useState(false)
   const [showSignUpPage,setShowSignUpPage] = useState(false)
   const [showInstructorJoin,setShowInstructorJoin]  = useState(false)
+  const  [forgetPassword,setForgetPassword] = useState(false)
   const handleLoginClick =  () => {
     setShowLoginModal((data) => !data)
   }
@@ -68,6 +69,8 @@ const BottomNav = () => {
           <Login
             setShowLoginModal={setShowLoginModal}
             setShowSignUpPage={setShowSignUpPage}
+            setForgetPassword={setForgetPassword}
+            forgetPassword={forgetPassword}
           />
         </div>
       )}
