@@ -2,7 +2,19 @@ import React from 'react'
 
 const Courses = () => {
   return (
-    <div>courses</div>
+   <section>
+    <table>
+      <th>
+        <tr>Courses</tr>
+        <tr>Date</tr>
+        <tr>Total Price</tr>
+        <tr>Payment Type</tr>
+      </th>
+      <tb>
+
+      </tb>
+    </table>
+   </section>
   )
 }
 
