@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef,useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { ImLinkedin } from "react-icons/im";
 import { FaRegEye } from "react-icons/fa6";
@@ -8,6 +8,8 @@ import ForgetPassword from "../password/ForgetPassword";
 const Login = (props) => {
   const [showPassword, setShowPassword] = useState(false)
 const [verifyEmail,setVerifyEmail] = useState(false)
+const loginRef = useRef(null);
+
   const handleChaneIcon = () => {
     setShowPassword((data) => !data)
   }
@@ -21,9 +23,23 @@ const [verifyEmail,setVerifyEmail] = useState(false)
   const handleCloseIcon = () => {
     props.setShowLoginModal(false)
   }
+  const centerLogin = () => {
+    const windowHeight = window.innerHeight;
+    const loginHeight = loginRef.current.clientHeight;
+    const topPosition = (windowHeight - loginHeight) / 2;
+    loginRef.current.style.top = `${topPosition}px`;
+  };
+  useEffect(() => {
+    centerLogin();
+    window.addEventListener("resize", centerLogin);
+    return () => window.removeEventListener("resize", centerLogin);
+  }, []);
+  
+
+  
   return (
 
-    <div className={`absolute bg-white p-6 rounded-lg w-96 top-10 ${props.forgetPassword === false ?"h-[88vh]":"h-[auto]"}  overflow-y-auto`}>
+    <div ref={loginRef} className={`absolute bg-white p-6 rounded-lg  max-sm:max-w-[85%] w-96 max-h-screen    overflow-y-auto`}>
       {props.forgetPassword === false ?
         <div>
           <div className="flex justify-center">
@@ -72,7 +88,7 @@ const [verifyEmail,setVerifyEmail] = useState(false)
             <span className="flex-shrink-0"><ImLinkedin /></span>
             <span className="flex-grow text-center">Continue with Linkedin</span>
           </button>
-          <div className="flex justify-center items-center mt-4 mb-6">
+          <div className="flex justify-center items-center mt-4 mb-4">
             <p className="text-gray-500">New to TeacherCool?<span className="text-blue-600 cursor-pointer" onClick={handleSignup}>Signup</span></p>
           </div>
         </div>
