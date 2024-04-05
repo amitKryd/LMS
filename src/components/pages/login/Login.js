@@ -23,7 +23,7 @@ const [verifyEmail,setVerifyEmail] = useState(false)
   }
   return (
 
-    <div className="absolute bg-white p-6 rounded-lg w-96 top-10 h-[88vh] overflow-y-auto">
+    <div className={`absolute bg-white p-6 rounded-lg w-96 top-10 ${props.forgetPassword === false ?"h-[88vh]":"h-[auto]"}  overflow-y-auto`}>
       {props.forgetPassword === false ?
         <div>
           <div className="flex justify-center">
