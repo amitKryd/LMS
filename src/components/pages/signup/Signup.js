@@ -471,12 +471,12 @@ export const NextInstructor = () => {
   return (
     <div>
       <form className="grid grid-cols-2  gap-4 w-full max-sm:grid-cols-1">
-        <div className="mb-4 mt-6">
+        <div className=" mt-6">
           <label className="block text-sm text-gray-900 font-semibold mb-4">
             Highest Qualification
           </label>
           <div className="relative">
-            <select className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
+            <select className="block appearance-none border bg-white  border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0  text-gray-600 text-sm">
               <option value="" disabled selected className="text-gray-600 text-sm">
                 Select Qualification
               </option>
@@ -498,11 +498,11 @@ export const NextInstructor = () => {
             </div>
           </div>
         </div>
-        <div className="mb-4 mt-6">
+        <div className="max-sm:mt-0 mt-6">
           <label className="block text-sm text-gray-900 font-semibold mb-4">
             Available Hours
           </label>
-          <div className="relative">
+          <div className="relative ">
             <select className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
               <option value="" disabled selected className="text-gray-600 text-sm">
                 Select Hours
@@ -525,7 +525,7 @@ export const NextInstructor = () => {
             </div>
           </div>
         </div>
-        <div className="mb-4 mt-0">
+        <div className=" mt-0">
           <label className="block text-sm text-gray-900 font-semibold mb-4">
             Expected Income
           </label>
@@ -535,7 +535,7 @@ export const NextInstructor = () => {
             placeholder="Expectation on Income"
           />
         </div>
-        <div className="mb-4 mt-0">
+        <div className=" mt-0">
           <label className="block text-sm text-gray-900 font-semibold mb-4">
             Currency
           </label>
@@ -562,7 +562,7 @@ export const NextInstructor = () => {
             </div>
           </div>
         </div>
-        <div className="mb-4 mt-0">
+        <div className=" mt-0">
           <label className="block text-sm text-gray-900 font-semibold mb-4">
             Category
           </label>
@@ -589,7 +589,7 @@ export const NextInstructor = () => {
             </div>
           </div>
         </div>
-        <div className="mb-4 mt-0">
+        <div className=" mt-0">
           <label className="block text-sm text-gray-900 font-semibold mb-4">
             Subject Specialization
           </label>

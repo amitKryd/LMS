@@ -12,7 +12,7 @@ const CoursesComp = () => {
   };
   return (
     <>
-      <div className="container mx-auto ">
+      <div className="container mx-auto max-sm:px-4 ">
         <h2 className="font-semibold text-3xl">
           Get Started with your Courses today!
         </h2>
@@ -99,7 +99,7 @@ const DataAnalyst = () => {
   return (
     <>
       <div class="border-2 border-solid border-gray-300  rounded ">
-        <div className="mt-10 mx-10 max-lg:mt-5">
+        <div className="mt-10 mx-10  max-sm:mx-2 max-lg:mt-5">
           <h1 className="font-semibold text-3xl max-lg:text-center">Data Analyst</h1>
           <p className="text-textColor max-lg:text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque

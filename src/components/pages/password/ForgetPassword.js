@@ -17,7 +17,7 @@ const ForgetPassword = (props) => {
           <img src={process.env.PUBLIC_URL + "/images/x.png"} alt="cross" />
         </div>
         <div className="flex justify-center mt-[-12px]  items-center">
-          <h2 className="font-semibold text-gray-900 text-2xl">Forget Password</h2>
+          <h2 className="font-semibold text-gray-900 text-2xl max-sm:text-xl">Forget Password</h2>
         </div>
         <div className="flex justify-center my-5  flex-col items-center">
           <img src={process.env.PUBLIC_URL + "/images/forgetPassword.png"} alt="cross" />
