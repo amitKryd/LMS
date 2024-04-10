@@ -12,18 +12,28 @@ const NewPassword = (props) => {
       const changeIconConfirmPassWord = () => {
         setShowConfirmPassIcon((data) => !data)
       }
+      const  handleCloseIcon = () => {
+        props.setShowLoginModal(false);
+        props.setForgetPassword(false)
+      }
+      const handleSavePassword = () => {
+        props.setShowLoginModal(true);
+        props.setShowNewPasswordCard(false);
+        props.setVerifyEmail(false);
+        props.setForgetPassword(false)
+      }
   return (
     <div>
      
       <div>
         <div
           className="flex justify-end cursor-pointer"
-          onClick={() => { props.setShowLoginModal(false); props.setForgetPassword(false) }}
+          onClick={handleCloseIcon}
         >
           <img src={process.env.PUBLIC_URL + "/images/x.png"} alt="cross" />
         </div>
         <div className="flex justify-center mt-[-12px]  items-center">
-          <h2 className="font-semibold text-gray-900 text-2xl">Create New Password</h2>
+          <h2 className="font-semibold text-gray-900 text-2xl max-sm:text-xl">Create New Password</h2>
         </div>
         <div className="flex justify-center my-5  flex-col items-center">
           <img src={process.env.PUBLIC_URL + "/images/forgetPassword.png"} alt="cross" />
@@ -35,7 +45,7 @@ const NewPassword = (props) => {
               <label className="block text-sm text-gray-900 font-semibold mb-4">Password</label>
               <div className=" relative">
                 <input
-                  type={showPasswordIcon ? "password" : "text"}
+                  type={showPasswordIcon ? "text" : "password"}
                   className="border border-gray-300 rounded-md px-3 py-2 w-full"
                   placeholder="Password"
                 />
@@ -46,14 +56,14 @@ const NewPassword = (props) => {
               <label className="block text-sm text-gray-900 font-semibold mb-4">Confirm  Password</label>
               <div className=" relative">
                 <input
-                  type={showConfirmPassIcon ? "password" : "text"}
+                  type={showConfirmPassIcon ? "text" : "password"}
                   className="border border-gray-300 rounded-md px-3 py-2 w-full"
                   placeholder="Password"
                 />
                 <span onClick={changeIconConfirmPassWord} className="absolute  right-4 bottom-3 cursor-pointer">{showConfirmPassIcon ? <IoEyeOffOutline /> : <FaRegEye />}</span>
               </div>
             </div>
-        <button className="bg-blue-500 hover:bg-blue-600 w-full text-white font-semi py-2 px-4 mt-5 rounded" onClick={() => {props.setShowLoginModal(true);  props.setShowNewPasswordCard(false)}}>
+        <button className="bg-blue-500 hover:bg-blue-600 w-full text-white font-semi py-2 px-4 mt-5 rounded"  onClick={handleSavePassword}>
           Save
         </button>
         

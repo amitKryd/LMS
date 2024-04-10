@@ -3,9 +3,9 @@ import JoinFreeBtn from "../button/PrimaryButton";
 import { MdCheck } from "react-icons/md";
 const StudentsPlans = () => {
   return (
-    <div className="bg-gradient-to-b from-blue-50 to-blue-300 pb-20">
+    <div className="bg-gradient-to-b from-blue-50 to-blue-300 pb-20 max-sm:px-2">
       <div className="container mx-auto">
-        <h1 className="text-4xl font-bold text-center pt-20 pb-20">
+        <h1 className="text-4xl font-bold text-center pt-20 pb-20 max-sm:text-3xl">
           Choose the plan that's right for your career growth
         </h1>
         <div className="flex justify-center lg:flex-row sm:flex-col max-sm:flex-col sm:gap-4 max-sm:gap-4 lg:gap-0 text-center">

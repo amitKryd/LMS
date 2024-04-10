@@ -55,7 +55,7 @@ const NewTeacherCool = () => {
           
           <SecondaryButton data={data} />
           <CardOne dataOne={dataOne} />
-          <div className="pt-10 py-6">
+          <div className="pt-8 py-2 max-sm:pl-6 max-sm:py-2">
             <button className="bg-white text-blue-500 rounded-md text-base px-5 h-10 cursor-pointer border border-solid border-blue-400">
               View all courses <span>&raquo;</span>
             </button>

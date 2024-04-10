@@ -10,18 +10,23 @@ const VerifyEmail = (props) => {
     const handleNewPasswordCard = () => {
         setShowNewPasswordCard((data) => !data)
     }
+    const handleCloseIcon = () => {
+        props.setShowLoginModal(false);
+        props.setVerifyEmail(false)
+        props.setForgetPassword(false)
+    }
     return (
         <div>
             {showNewPasswordCard === false ?
                 <div>
                     <div
                         className="flex justify-end cursor-pointer"
-                       onClick={() =>  {props.setShowLoginModal(false);props.setVerifyEmail(false) }}
+                       onClick={handleCloseIcon}
                     >
                         <img src={process.env.PUBLIC_URL + "/images/x.png"} alt="cross" />
                     </div>
                     <div className="flex justify-center mt-[-12px]  items-center">
-                        <h2 className="font-semibold text-gray-900 text-2xl">Verify your Email</h2>
+                        <h2 className="font-semibold text-gray-900 text-2xl max-sm:text-xl">Verify your Email</h2>
                     </div>
                     <div className="flex justify-center my-5  flex-col items-center">
                         <img src={process.env.PUBLIC_URL + "/images/verifyEmail.png"} alt="cross" />
@@ -39,7 +44,7 @@ const VerifyEmail = (props) => {
                         </button>
                     </div>
                 </div>
-                : <NewPassword setShowLoginModal={props.setShowLoginModal} setShowNewPasswordCard={setShowNewPasswordCard} />}
+                : <NewPassword setShowLoginModal={props.setShowLoginModal} setShowNewPasswordCard={setShowNewPasswordCard} setVerifyEmail={props.setVerifyEmail} setForgetPassword={props.setForgetPassword} />}
         </div>
     )
 }
@@ -99,7 +104,7 @@ const OtpInput = ({ length = 6, onOtpSubmit = () => { } }) => {
     };
 
     return (
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center ">
             {otp.map((value, index) => (
                 <input
                     key={index}
@@ -109,7 +114,7 @@ const OtpInput = ({ length = 6, onOtpSubmit = () => { } }) => {
                     onChange={(e) => handleChange(index, e)}
                     onClick={() => handleClick(index)}
                     onKeyDown={(e) => handleKeyDown(index, e)}
-                    className="w-10 h-10 m-2 bg-[#EAF0FE] rounded  focus:outline-none focus:ring focus:ring-blue-100 focus:border-blue-300 text-center text-xl border"
+                    className="w-10 h-10 m-2  max-sm:m-1  bg-[#EAF0FE] rounded  focus:outline-none focus:ring focus:ring-blue-100 focus:border-blue-300 text-center text-xl border"
                 />
             ))}
         </div>

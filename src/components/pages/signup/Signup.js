@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef,useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { ImLinkedin } from "react-icons/im";
 import { FaRegEye, FaCheck } from "react-icons/fa6";
@@ -9,9 +9,24 @@ import { MdOutlineFileUpload } from "react-icons/md";
 
 
 const Signup = (props) => {
+  const loginRef = useRef(null);
   const [showPassword, setShowPassword] = useState(false);
   const [nextModal, setNextModal] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Student");
+  const centerLogin = () => {
+    const windowHeight = window.innerHeight;
+    const loginHeight = loginRef.current.clientHeight;
+    const topPosition = (windowHeight - loginHeight) / 2;
+    loginRef.current.style.top = `${topPosition}px`;
+    const bottomMargin = 50; // Adjust as needed
+   
+    loginRef.current.style.bottom = `${bottomMargin}px`;
+  };
+  useEffect(() => {
+    centerLogin();
+    window.addEventListener("resize", centerLogin);
+    return () => window.removeEventListener("resize", centerLogin);
+  }, []);
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
@@ -33,7 +48,8 @@ const Signup = (props) => {
     props.setShowInstructorJoin((data) => !data)
   }
   return (
-    <div className={`absolute bg-white p-6 rounded-lg  top-10 h-[88vh] overflow-y-auto  ${props.showInstructorJoin ? 'w-[900px]' : 'w-96'}`}>
+    
+    <div ref={loginRef} className={`absolute bg-white p-6 rounded-lg  max-sm:max-w-[85%] max-lg:max-w-[85%] max-h-screen overflow-y-auto  ${props.showInstructorJoin ? 'w-[900px]' : 'w-96'}`} >
       <div
         className="flex justify-end cursor-pointer"
         onClick={() => { props.setShowSignUpPage(false); props.setShowInstructorJoin(false) }}
@@ -41,7 +57,7 @@ const Signup = (props) => {
         <img src={process.env.PUBLIC_URL + "/images/x.png"} alt="cross" />
       </div>
 
-      <div className="flex justify-center mt-[-12px] flex-col items-center">
+      <div className="flex justify-center flex-col items-center">
         <h2 className="font-semibold text-gray-900 text-2xl">Sign Up</h2>
 
         <div className="w-[220px] m-auto ">
@@ -454,13 +470,13 @@ export const NextForm = (props) => {
 export const NextInstructor = () => {
   return (
     <div>
-      <form className="grid grid-cols-2 gap-4 w-full">
-        <div className="mb-4 mt-6">
+      <form className="grid grid-cols-2  gap-4 w-full max-sm:grid-cols-1">
+        <div className=" mt-6">
           <label className="block text-sm text-gray-900 font-semibold mb-4">
             Highest Qualification
           </label>
           <div className="relative">
-            <select className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
+            <select className="block appearance-none border bg-white  border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0  text-gray-600 text-sm">
               <option value="" disabled selected className="text-gray-600 text-sm">
                 Select Qualification
               </option>
@@ -482,11 +498,11 @@ export const NextInstructor = () => {
             </div>
           </div>
         </div>
-        <div className="mb-4 mt-6">
+        <div className="max-sm:mt-0 mt-6">
           <label className="block text-sm text-gray-900 font-semibold mb-4">
             Available Hours
           </label>
-          <div className="relative">
+          <div className="relative ">
             <select className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
               <option value="" disabled selected className="text-gray-600 text-sm">
                 Select Hours
@@ -509,7 +525,7 @@ export const NextInstructor = () => {
             </div>
           </div>
         </div>
-        <div className="mb-4 mt-0">
+        <div className=" mt-0">
           <label className="block text-sm text-gray-900 font-semibold mb-4">
             Expected Income
           </label>
@@ -519,7 +535,7 @@ export const NextInstructor = () => {
             placeholder="Expectation on Income"
           />
         </div>
-        <div className="mb-4 mt-0">
+        <div className=" mt-0">
           <label className="block text-sm text-gray-900 font-semibold mb-4">
             Currency
           </label>
@@ -546,7 +562,7 @@ export const NextInstructor = () => {
             </div>
           </div>
         </div>
-        <div className="mb-4 mt-0">
+        <div className=" mt-0">
           <label className="block text-sm text-gray-900 font-semibold mb-4">
             Category
           </label>
@@ -573,7 +589,7 @@ export const NextInstructor = () => {
             </div>
           </div>
         </div>
-        <div className="mb-4 mt-0">
+        <div className=" mt-0">
           <label className="block text-sm text-gray-900 font-semibold mb-4">
             Subject Specialization
           </label>

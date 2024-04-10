@@ -7,6 +7,8 @@ import JoinFreeBtn from "../../button/PrimaryButton";
 import Navigation from "./TopNavigation";
 import Login from "../login/Login";
 import Signup from "../signup/Signup";
+import { NavLink } from "react-router-dom";
+import { RoutePaths } from "../../../route/RoutePath";
 const BottomNav = () => {
   const [showLoginModal,setShowLoginModal] = useState(false)
   const [showSignUpPage,setShowSignUpPage] = useState(false)
@@ -18,12 +20,12 @@ const BottomNav = () => {
  
   return (
     <>
-      <div className=" bottom_head_nav sm:invisible max-sm:invisible lg:visible py-3">
-        <div className="flex container mx-auto justify-between items-center xl:flex-row sm:flex-col max-sm:flex-col">
+      <div className=" bottom_head_nav  lg:visible py-2">
+        <div className="flex  container mx-auto justify-between items-center xl:flex-row sm:flex-col max-sm:flex-col">
           {/* logo */}
-          <div className="logo_with_btn">
+          <NavLink  to={RoutePaths.home.path} className="logo_with_btn">
             <img src={Logo} alt="nav-logo" className="cursor-pointer" />
-          </div>
+          </NavLink>
           {/* dropdown  */}
 
           <div class="inline-block ml-10 relative">

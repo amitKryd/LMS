@@ -2,18 +2,22 @@ import React from 'react'
 import VerifyEmail from '../verifyEmail/VerifyEmail';
 
 const ForgetPassword = (props) => {
+  const handleCloseIcon = () => {
+    props.setShowLoginModal(false);
+    props.setForgetPassword(false)
+  }
   return (
     <div>
       {props.verifyEmail === false?
       <div>
         <div
           className="flex justify-end cursor-pointer"
-          onClick={() => { props.setShowLoginModal(false); props.setForgetPassword(false) }}
+          onClick={handleCloseIcon}
         >
           <img src={process.env.PUBLIC_URL + "/images/x.png"} alt="cross" />
         </div>
         <div className="flex justify-center mt-[-12px]  items-center">
-          <h2 className="font-semibold text-gray-900 text-2xl">Forget Password</h2>
+          <h2 className="font-semibold text-gray-900 text-2xl max-sm:text-xl">Forget Password</h2>
         </div>
         <div className="flex justify-center my-5  flex-col items-center">
           <img src={process.env.PUBLIC_URL + "/images/forgetPassword.png"} alt="cross" />
@@ -35,7 +39,7 @@ const ForgetPassword = (props) => {
         <div className='flex justify-center items-center mt-3'>
           <button className='py-2 text-center underline  ' onClick={() => props.setForgetPassword(false)}>Go Back  <span>&raquo;</span></button>
         </div>
-      </div>: <VerifyEmail setShowLoginModal={props.setShowLoginModal} setVerifyEmail={props.setVerifyEmail}   />}
+      </div>: <VerifyEmail setShowLoginModal={props.setShowLoginModal} setVerifyEmail={props.setVerifyEmail} setForgetPassword={props.setForgetPassword}   />}
     </div>
   )
 }

@@ -7,13 +7,13 @@ const FrequentlyAskQuest = () => {
   };
   return (
     <div className="bg-orange-100 pb-10 pt-20">
-      <div className="container mx-auto min-h-0 flex items-center  flex-col   ">
-        <h1 className="text-4xl font-bold mb-4">Frequently asked questions</h1>
+      <div className="container mx-auto min-h-0 flex items-center max-sm:items-start max-sm:px-4 flex-col   ">
+        <h1 className="text-4xl max-sm:text-2xl font-bold mb-4">Frequently asked questions</h1>
         {[1, 2, 3, 4, 5, 6, 7].map((item, index) => {
           return (
             <div key={index}>
               <div
-                className={`w-[70vw] flex items-center justify-between border-2 rounded-lg border-gray-200 bg-white p-4 ${
+                className={`w-[70vw] max-sm:w-full flex items-center justify-between border-2 rounded-lg border-gray-200 bg-white p-4 ${
                   id == item ? "bg-blue-100" : "mb-4"
                 }`}
               >
@@ -23,7 +23,7 @@ const FrequentlyAskQuest = () => {
                   amet
                 </p>
                 <IoIosArrowDown
-                  className={`cursor-pointer text-2xl  ${
+                  className={`cursor-pointer text-2xl max-sm:text-6xl  ${
                     id == item
                       ? "delay-50 duration-300 -rotate-180 text-blue-600"
                       : "delay-50 duration-300 rotate-60"
@@ -32,7 +32,7 @@ const FrequentlyAskQuest = () => {
                 />
               </div>
               {id == item && (
-                <div className="w-[70vw]  border rounded-lg border-gray-200 p-4 mb-4 bg-white">
+                <div className="w-[70vw] max-sm:w-full  border rounded-lg border-gray-200 p-4 mb-4 bg-white">
                   <p>
                     This is the first item's accordion body. It is shown by
                     default, until the collapse plugin adds the appropriate

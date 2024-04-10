@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef,useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { ImLinkedin } from "react-icons/im";
 import { FaRegEye } from "react-icons/fa6";
@@ -8,6 +8,8 @@ import ForgetPassword from "../password/ForgetPassword";
 const Login = (props) => {
   const [showPassword, setShowPassword] = useState(false)
 const [verifyEmail,setVerifyEmail] = useState(false)
+const loginRef = useRef(null);
+
   const handleChaneIcon = () => {
     setShowPassword((data) => !data)
   }
@@ -18,15 +20,32 @@ const [verifyEmail,setVerifyEmail] = useState(false)
   const handleForgetPassword = () => {
     props.setForgetPassword(true)
   }
+  const handleCloseIcon = () => {
+    props.setShowLoginModal(false)
+  }
+  const centerLogin = () => {
+    const windowHeight = window.innerHeight;
+    const loginHeight = loginRef.current.clientHeight;
+    const topPosition = (windowHeight - loginHeight) / 2;
+    loginRef.current.style.top = `${topPosition}px`;
+  };
+  useEffect(() => {
+    centerLogin();
+    window.addEventListener("resize", centerLogin);
+    return () => window.removeEventListener("resize", centerLogin);
+  }, []);
+  
+
+  
   return (
 
-    <div className="absolute bg-white p-6 rounded-lg w-96 top-10 h-[88vh] overflow-y-auto">
+    <div ref={loginRef} className={`absolute bg-white p-6 rounded-lg  max-sm:max-w-[85%] w-96 max-h-screen    overflow-y-auto`}>
       {props.forgetPassword === false ?
         <div>
           <div className="flex justify-center">
 
             <h2 className="font-semibold text-gray-900 text-2xl">Welcome Back</h2>
-            <div className="absolute right-5 top-7 cursor-pointer" onClick={() => props.setShowLoginModal(false)}>
+            <div className="absolute right-5 top-7 cursor-pointer" onClick={handleCloseIcon}>
               <img src={process.env.PUBLIC_URL + "/images/x.png"} alt="cross" />
             </div>
           </div>
@@ -43,11 +62,11 @@ const [verifyEmail,setVerifyEmail] = useState(false)
               <label className="block text-sm text-gray-900 font-semibold mb-4">Password</label>
               <div className=" relative">
                 <input
-                  type={showPassword ? "password" : "text"}
+                  type={showPassword ? "text" : "password"}
                   className="border border-gray-300 rounded-md px-3 py-2 w-full"
                   placeholder="Password"
                 />
-                <span onClick={handleChaneIcon} className="absolute  right-4 bottom-3 cursor-pointer">{showPassword ? <FaRegEye /> : <IoEyeOffOutline />}</span>
+                <span onClick={handleChaneIcon} className="absolute  right-4 bottom-3 cursor-pointer">{showPassword ? <IoEyeOffOutline /> : <FaRegEye />}</span>
               </div>
             </div>
             <span className="block text-sm text-blue-500 cursor-pointer" onClick={handleForgetPassword}>Forget Password?</span>
@@ -69,7 +88,7 @@ const [verifyEmail,setVerifyEmail] = useState(false)
             <span className="flex-shrink-0"><ImLinkedin /></span>
             <span className="flex-grow text-center">Continue with Linkedin</span>
           </button>
-          <div className="flex justify-center items-center mt-4 mb-6">
+          <div className="flex justify-center items-center mt-4 mb-4">
             <p className="text-gray-500">New to TeacherCool?<span className="text-blue-600 cursor-pointer" onClick={handleSignup}>Signup</span></p>
           </div>
         </div>

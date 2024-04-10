@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const CardTwo = (props) => {
   return (
     <>
-     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 py-5  max-sm:m-6">
+     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 py-5  max-sm:m-1 ">
   {props?.data?.map((item, ind) => {
     return (
       <motion.div key={ind} className="mt-4 border-solid min-h-16 border border-gray-200 shadow-md rounded-lg"
