@@ -9,17 +9,23 @@ import Login from "../login/Login";
 import Signup from "../signup/Signup";
 import { NavLink } from "react-router-dom";
 import { RoutePaths } from "../../../route/RoutePath";
+import { ToastContainer, toast } from 'react-toastify'
+
 const BottomNav = () => {
+  
   const [showLoginModal,setShowLoginModal] = useState(false)
   const [showSignUpPage,setShowSignUpPage] = useState(false)
   const [showInstructorJoin,setShowInstructorJoin]  = useState(false)
   const  [forgetPassword,setForgetPassword] = useState(false)
+  
   const handleLoginClick =  () => {
     setShowLoginModal((data) => !data)
+    toast.success('Successfully close')
   }
  
   return (
     <>
+    <ToastContainer />
       <div className=" bottom_head_nav  lg:visible py-2">
         <div className="flex  container mx-auto justify-between items-center xl:flex-row sm:flex-col max-sm:flex-col">
           {/* logo */}
@@ -79,7 +85,7 @@ const BottomNav = () => {
       
       {showSignUpPage && (
         <div className="fixed inset-0 z-10 flex justify-center items-center bg-black bg-opacity-50">
-          <Signup setShowSignUpPage={setShowSignUpPage} setShowLoginModal={setShowLoginModal}  setShowInstructorJoin={setShowInstructorJoin}  showInstructorJoin={showInstructorJoin} />
+          <Signup setShowSignUpPage={setShowSignUpPage} setShowLoginModal={setShowLoginModal}  showSignUpPage={showSignUpPage}    showInstructorJoin={showInstructorJoin} />
         </div>
       )}
         

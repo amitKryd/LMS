@@ -1,32 +1,88 @@
-import React, { useState,useRef,useEffect } from "react";
-import { FcGoogle } from "react-icons/fc";
-import { ImLinkedin } from "react-icons/im";
-import { FaRegEye, FaCheck } from "react-icons/fa6";
-import { IoEyeOffOutline } from "react-icons/io5";
-import { FiEdit2 } from "react-icons/fi";
-import { IoIosArrowDown } from "react-icons/io";
-import { MdOutlineFileUpload } from "react-icons/md";
-
+import React, { useState, useRef, useEffect } from "react";
+import StudentSignup from "./student/StudentSignup"
+import InstructorSignup from "./instructor/InstructorSignup"
+import RadioWithCheck from "./radioCheck/RadioWithCheck"
+import StudentFinalSignup from "./student/StudentFinalSignup";
+import InstructorMiddleSignup from "./instructor/InstructorMiddleSignup";
+import FinalInstructor from "./instructor/FinalInstructor";
+import { IoArrowBack } from "react-icons/io5";
 
 const Signup = (props) => {
+
   const loginRef = useRef(null);
   const [showPassword, setShowPassword] = useState(false);
-  const [nextModal, setNextModal] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("Student");
+  const [studentNextModal, setStudentNextModal] = useState(false);
+  const [instructorMiddleModal, setInstructorMiddleModal] = useState(false)
+  const [instructorFinalModal, setInstructorFinalModal] = useState(false)
+  const [goBack, setGoback] = useState(false)
   const centerLogin = () => {
     const windowHeight = window.innerHeight;
     const loginHeight = loginRef.current.clientHeight;
     const topPosition = (windowHeight - loginHeight) / 2;
     loginRef.current.style.top = `${topPosition}px`;
-    const bottomMargin = 50; // Adjust as needed
-   
+    const bottomMargin = 50;
+
     loginRef.current.style.bottom = `${bottomMargin}px`;
   };
   useEffect(() => {
     centerLogin();
-    window.addEventListener("resize", centerLogin);
+    window.addEventListener("resize", centerLogin());
     return () => window.removeEventListener("resize", centerLogin);
   }, []);
+  // checkbox for changes modal start
+  const [selectedOption, setSelectedOption] = useState("Student");
+  // checkbox for changes modal end
+
+  // student first page signup start
+  const [studentSignup, setStudentSignup] = useState({
+    studentFullName: '',
+    studentEmail: '',
+    studentPassword: ''
+  })
+  const [studentFinalformData, setStudentFinalFormData] = useState({
+    image: '',
+    country: '',
+    currency: '',
+    referralCode: '',
+    agree: false,
+  });
+  // student first page signup end
+
+  // instructor first page signup start
+  const [instructorSignup, setInstructorSignup] = useState({
+    instructorFullName: '',
+    instructorEmail: '',
+
+  })
+  // instructor first page signup end
+
+  // instructor middle page signup end
+  const [instructorMiddleformData, setInstructorMiddleFormData] = useState({
+    image: '',
+    country: '',
+    contactNumber: '',
+    password: '',
+    confirmPassword: '',
+    agree: false,
+  });
+  // instructor middle page signup end
+
+  // instructor lastt page signup start
+  const [finalInstructorformData, setFinalInstructorFormData] = useState({
+    qualification: '',
+    hours: '',
+    income: '',
+    currency: '',
+    category: '',
+    specialization: '',
+    idProof: '',
+    educationalDocs: '',
+    agree: false,
+  });
+  // instructor lastt page signup start
+
+
+
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
@@ -39,22 +95,61 @@ const Signup = (props) => {
     props.setShowSignUpPage(false)
     props.setShowInstructorJoin(false)
   }
-  const NextFunction = (e) => {
+  const studentNextFunction = (e) => {
+
     e.preventDefault();
-    setNextModal((data) => !data);
+    setStudentNextModal(true);
+    setGoback(true)
   };
-  const nextInstructor = (e) => {
+  
+  //instructor middle page  start
+  const nextInstructorMiddlePage = (e) => {
     e.preventDefault()
-    props.setShowInstructorJoin((data) => !data)
+    setInstructorMiddleModal(true)
+    setGoback(true)
   }
+
+  //instructor middle page  end
+
+  //instructor final page  start
+  const nextInstructorFinalPage = () => {
+    setInstructorFinalModal(true)
+    setInstructorMiddleModal(false)
+    setGoback(true)
+  }
+  //instructor final page  end
+  const handleGoBack = () => {
+    if (selectedOption == "Student") {
+      setStudentNextModal(false)
+      setGoback(false)
+    } else if (selectedOption == "Instructor" && instructorMiddleModal===true && instructorFinalModal === false ) {
+      setInstructorMiddleModal(false)
+      setGoback(false)
+
+    } else if (selectedOption == "Instructor" && instructorMiddleModal===false && instructorFinalModal === true ) {
+      setInstructorMiddleModal(true)
+      setInstructorFinalModal(false)
+      setGoback(true)
+
+    }
+  }
+  useEffect(() => {
+    if (selectedOption == "Student") {
+      setGoback(false)
+    } else if (selectedOption === "Instructor") {
+      setGoback(false)
+    }
+  }, [selectedOption])
   return (
-    
-    <div ref={loginRef} className={`absolute bg-white p-6 rounded-lg  max-sm:max-w-[85%] max-lg:max-w-[85%] max-h-screen overflow-y-auto  ${props.showInstructorJoin ? 'w-[900px]' : 'w-96'}`} >
+
+    <div ref={loginRef} className={`absolute bg-white p-6 rounded-lg  max-sm:max-w-[85%] max-lg:max-w-[85%] max-h-screen overflow-y-auto  ${instructorFinalModal ? 'w-[900px]' : 'w-96'}`} >
       <div
-        className="flex justify-end cursor-pointer"
-        onClick={() => { props.setShowSignUpPage(false); props.setShowInstructorJoin(false) }}
+        className={`flex ${goBack?"justify-between":"justify-end"} items-center cursor-pointer`}
+
       >
-        <img src={process.env.PUBLIC_URL + "/images/x.png"} alt="cross" />
+        {goBack ?
+          <button onClick={handleGoBack}><IoArrowBack /></button> : ""}
+        <img onClick={() => props.setShowSignUpPage(false)} src={process.env.PUBLIC_URL + "/images/x.png"} alt="cross" />
       </div>
 
       <div className="flex justify-center flex-col items-center">
@@ -66,8 +161,8 @@ const Signup = (props) => {
           </p>
         </div>
       </div>
-      {props.showInstructorJoin ? <NextInstructor /> : ''}
-      {props.showInstructorJoin === false && nextModal === false && (
+
+      {props.showInstructorJoin === false && studentNextModal === false && instructorMiddleModal === false && instructorFinalModal === false && (
         <div className="mt-8">
           <p className="block text-sm text-gray-900 font-semibold mb-4">
             Select Category
@@ -78,118 +173,20 @@ const Signup = (props) => {
           />
         </div>
       )}
-      {nextModal === false && selectedOption === "Student" ? (
-        <form>
-          <div className="mb-4 mt-4">
-            <label className="block text-sm text-gray-900 font-semibold mb-4">
-              Full Name
-            </label>
-            <input
-              type="text"
-              className="border bg-[white] border-gray-300 rounded-md px-3 py-2 w-full"
-              placeholder="Enter your full name"
-            />
-          </div>
-          <div className="mb-4 mt-1">
-            <label className="block text-sm text-gray-900 font-semibold mb-4">
-              Email Address
-            </label>
-            <input
-              type="email"
-              className="border bg-[white] border-gray-300 rounded-md px-3 py-2 w-full"
-              placeholder="name@gmail.com"
-            />
-          </div>
-          <div className="mb-1">
-            <label className="block text-sm text-gray-900 font-semibold mb-4">
-              Password
-            </label>
-            <div className=" relative">
-              <input
-                type={showPassword ? "password" : "text"}
-                className="border border-gray-300 rounded-md px-3 py-2 w-full"
-                placeholder="Create password"
-              />
-              <span
-                onClick={handleChaneIcon}
-                className="absolute  right-4 bottom-3 cursor-pointer"
-              >
-                {showPassword ? <FaRegEye /> : <IoEyeOffOutline />}
-              </span>
-            </div>
-          </div>
-          <span className="block text-sm text-gray-500 ">
-            Between 8 and 72 characters
-          </span>
-          <button
-            onClick={NextFunction}
-            className="bg-blue-500 hover:bg-blue-600 w-[100%] text-white font-semibold py-2 px-4 mt-7 rounded"
-          >
-            <span className="pr-2">Next </span> <span>&raquo;</span>
-          </button>
-        </form>
-      ) : nextModal === false && selectedOption === "Instructor" ? (
-        <form>
-          <div className="mb-4 mt-4">
-            <label className="block text-sm text-gray-900 font-semibold mb-4">
-              Full Name
-            </label>
-            <input
-              type="text"
-              className="border bg-[white] border-gray-300 rounded-md px-3 py-2 w-full"
-              placeholder="Enter your full name"
-            />
-          </div>
-          <div className="mb-4 mt-1">
-            <label className="block text-sm text-gray-900 font-semibold mb-4">
-              Email Address
-            </label>
-            <input
-              type="email"
-              className="border bg-[white] border-gray-300 rounded-md px-3 py-2 w-full"
-              placeholder="name@gmail.com"
-            />
-          </div>
+      {/* student part start */}
+      {selectedOption === "Student" && studentNextModal === false && (
+        <StudentSignup studentSignup={studentSignup} setStudentSignup={setStudentSignup} handleChaneIcon={handleChaneIcon} studentNextFunction={studentNextFunction} showPassword={showPassword} setShowPassword={setShowPassword} />
 
-          <button
-            onClick={NextFunction}
-            className="bg-blue-500 hover:bg-blue-600 w-[100%] text-white font-semibold py-2 px-4 mt-7 rounded"
-          >
-            <span className="pr-2">Next </span> <span>&raquo;</span>
-          </button>
-        </form>
-      ) : nextModal === false && selectedOption === "Universities" ? (
-        <p>Hello Universities </p>
-      ) : nextModal === false ? (
-        <p>Hello Corporates</p>
-      ) : (
-        ""
       )}
-      {props.showInstructorJoin === false && nextModal === true && props.showInstructorJoin === false && <NextForm selectedOption={selectedOption} handleChaneIcon={handleChaneIcon} showPassword={showPassword} nextInstructor={nextInstructor} />}
-      {nextModal === false && (
-        <div>
-          <div className="mb-4 mt-7 flex">
-            <hr className="border-gray-300 my-4 inline-block w-1/2" />
-            <span className="text-gray-600 mx-3 my-1">or</span>
-            <hr className="border-gray-300 my-4 inline-block w-1/2" />
-          </div>
+      {selectedOption === "Student" && studentNextModal == true && <StudentFinalSignup studentFinalformData={studentFinalformData} setStudentFinalFormData={setStudentFinalFormData} />}
+      {/* student part end */}
 
-          <button className="bg-white hover:bg-blue-600 hover:text-white w-full border border-gray-400 font-semibold py-2 px-4 mt-7 rounded flex items-center justify-start">
-            <span className="flex-shrink-0">
-              <FcGoogle />
-            </span>
-            <span className="flex-grow text-center">Continue with Google</span>
-          </button>
-          <button className="bg-white hover:bg-blue-600 hover:text-white w-full border border-gray-400 font-semibold py-2 px-4 mt-4 rounded flex items-center justify-start">
-            <span className="flex-shrink-0">
-              <ImLinkedin />
-            </span>
-            <span className="flex-grow text-center">
-              Continue with Linkedin
-            </span>
-          </button>
-        </div>
-      )}
+      {/* instructor  part start */}
+      {selectedOption === "Instructor" && instructorMiddleModal === false && instructorFinalModal === false && <InstructorSignup instructorSignup={instructorSignup} setInstructorSignup={setInstructorSignup} nextInstructorMiddlePage={nextInstructorMiddlePage} />}
+      {selectedOption === "Instructor" && instructorMiddleModal === true && instructorFinalModal === false && <InstructorMiddleSignup nextInstructorFinalPage={nextInstructorFinalPage} instructorMiddleformData={instructorMiddleformData} setInstructorMiddleFormData={setInstructorMiddleFormData} handleChaneIcon={handleChaneIcon} showPassword={showPassword} setShowPassword={setShowPassword} />}
+      {selectedOption === "Instructor" && instructorFinalModal === true && <FinalInstructor nextInstructorFinalPage={nextInstructorFinalPage} finalInstructorformData={finalInstructorformData} setFinalInstructorFormData={setFinalInstructorFormData} />}
+      {/* instructor  part start */}
+
       <div className="flex justify-center items-center mt-4 mb-6">
         <p className="text-gray-500">
           Already on TeacherCool?<span className="text-blue-600 cursor-pointer" onClick={NavigateOnLogin}>Login</span>
@@ -201,460 +198,10 @@ const Signup = (props) => {
 
 export default Signup;
 
-export const RadioWithCheck = (props) => {
-  return (
-    <div className="flex items-center flex-wrap">
-      <div className="flex items-center mr-3 mb-2">
-        <input
-          type="radio"
-          id="Student"
-          name="occupation"
-          value="Student"
-          checked={props.selectedOption === "Student"}
-          onChange={() => props.handleOptionChange("Student")}
-          className="hidden"
-        />
-        <label
-          htmlFor="Student"
-          className="h-4 w-4 rounded-full border border-gray-400 flex items-center justify-center cursor-pointer mr-2"
-        >
-          {props.selectedOption === "Student" && (
-            <FaCheck className="text-[white] bg-blue-600 rounded-full" />
-          )}
-        </label>
-        <span className="text-gray-700">Student</span>
-      </div>
-
-      <div className="flex items-center mr-3 mb-2">
-        <input
-          type="radio"
-          id="instructor"
-          name="occupation"
-          value="Instructor"
-          checked={props.selectedOption === "Instructor"}
-          onChange={() => props.handleOptionChange("Instructor")}
-          className="hidden"
-        />
-        <label
-          htmlFor="instructor"
-          className="h-4 w-4 rounded-full border border-gray-400 flex items-center justify-center cursor-pointer mr-2"
-        >
-          {props.selectedOption === "Instructor" && (
-            <FaCheck className="text-[white] bg-blue-600 rounded-full" />
-          )}
-        </label>
-        <span className="text-gray-700">Instructor</span>
-      </div>
-
-      <div className="flex items-center mr-3 mb-2">
-        <input
-          type="radio"
-          id="Universities"
-          name="occupation"
-          value="Universities"
-          checked={props.selectedOption === "Universities"}
-          onChange={() => props.handleOptionChange("Universities")}
-          className="hidden"
-        />
-        <label
-          htmlFor="Universities"
-          className="h-4 w-4 rounded-full border border-gray-400 flex items-center justify-center cursor-pointer mr-2"
-        >
-          {props.selectedOption === "Universities" && (
-            <FaCheck className="text-[white] bg-blue-600 rounded-full" />
-          )}
-        </label>
-        <span className="text-gray-700">Universities</span>
-      </div>
-
-      <div className="flex items-center mb-2">
-        <input
-          type="radio"
-          id="Corporates"
-          name="occupation"
-          value="Corporates"
-          checked={props.selectedOption === "Corporates"}
-          onChange={() => props.handleOptionChange("Corporates")}
-          className="hidden"
-        />
-        <label
-          htmlFor="Corporates"
-          className="h-4 w-4 rounded-full border border-gray-400 flex items-center justify-center cursor-pointer mr-2"
-        >
-          {props.selectedOption === "Corporates" && (
-            <FaCheck className="text-[white] bg-blue-600 rounded-full" />
-          )}
-        </label>
-        <span className="text-gray-700">Corporates</span>
-      </div>
-    </div>
-  );
-};
-
-export const NextForm = (props) => {
-  const registerStudent =  (e) => {
-    e.preventDefault()
-  }
-  return (
-    <div className="mt-6">
-      <form>
-        <div className="flex items-center justify-around gap-5">
-          <div className="relative w-[159px] h-[156px] rounded-full border-2">
-            <p className="absolute top-0 right-3 m-2 bg-[white] cursor-pointer">
-              <FiEdit2 className="text-gray-400 bg-[white]" />
-            </p>
-            <p className="absolute text-sm text-gray-600 text-wrap text-center bottom-12">
-              Image size should be 150x200
-            </p>
-          </div>
-          <div className="cursor-pointer">
-            <p className="text-sm text-gray-900 font-semibold">
-              Upload Picture
-            </p>
-            <span className="text-gray-600 text-sm">(Non Mandatory)</span>
-          </div>
-        </div>
-        <div className="mb-4 mt-6">
-          <label className="block text-sm text-gray-900 font-semibold mb-4">
-            Country
-          </label>
-          <div className="relative">
-            <select className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
-              <option
-                value=""
-                disabled
-                selected
-                className="text-gray-600 text-sm"
-              >
-                Countries
-              </option>
-              <option value="1" className="text-gray-600 text-sm">
-                Option 1
-              </option>
-              <option value="2" className="text-gray-600 text-sm">
-                Option 2
-              </option>
-              <option value="3" className="text-gray-600 text-sm">
-                Option 3
-              </option>
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              {/* <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 13.707a1 1 0 0 1-1.414-1.414l4-4a1 1 0 0 1 1.414 1.414l-4 4z"/></svg> */}
-              <img
-                //   className="w-full max-h-30 rounded-t-lg object-contain"
-                src={process.env.PUBLIC_URL + `/images/Chevron Down.png`}
-                alt="drop-image"
-              />
-            </div>
-          </div>
-        </div>
-        {props.selectedOption === "Student" ? (
-          <div className="mb-4 mt-1">
-            <label className="block text-sm text-gray-900 font-semibold mb-4">
-              Currency
-            </label>
-            <div className="relative">
-              <select className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
-                <option value="" disabled selected text-gray-600 text-sm>
-                  Currency
-                </option>
-                <option value="1" text-gray-600 text-sm>
-                  Option 1
-                </option>
-                <option value="2" text-gray-600 text-sm>
-                  Option 2
-                </option>
-                <option value="3" text-gray-600 text-sm>
-                  Option 3
-                </option>
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                {/* <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 13.707a1 1 0 0 1-1.414-1.414l4-4a1 1 0 0 1 1.414 1.414l-4 4z"/></svg> */}
-                <img
-                  //   className="w-full max-h-30 rounded-t-lg object-contain"
-                  src={process.env.PUBLIC_URL + `/images/Chevron Down.png`}
-                  alt="drop-image"
-                />
-              </div>
-            </div>
-          </div>
-        ) : props.selectedOption === "Instructor" ? (
-          <div className="mb-4 mt-6">
-            <label className="block text-sm text-gray-900 font-semibold mb-4">
-              Contact number
-            </label>
-            <div className="flex gap-4 ">
-              <span className="flex items-center cursor-pointer pl-2 text-gray-500 border bg-[white] border-gray-300 rounded-md px-3 py-2">
-                +91 <IoIosArrowDown className="block ml-1" />
-              </span>
-
-              <input
-                type="tel"
-                className="border bg-[white] border-gray-300 rounded-md w-full px-3 py-2  focus:outline-none"
-                placeholder="9999999999"
-              />
-            </div>
-          </div>
-        ) : (
-          ""
-        )}
-        {props.selectedOption === "Student" ?
-          <div className="mb-4 mt-1">
-            <label className="block text-sm text-gray-900 font-semibold mb-4">
-              Referal Code
-            </label>
-            <input
-              type="text"
-              className="border bg-[white] text-gray-600 text-sm border-gray-300 rounded-md px-3 py-2 w-full"
-              placeholder="Enter Referal Code"
-            />
-          </div> : props.selectedOption === "Instructor" ?
-            <div>
-              <div className="mb-1">
-                <label className="block text-sm text-gray-900 font-semibold mb-4">
-                  Password
-                </label>
-                <div className=" relative">
-                  <input
-                    type={props.showPassword ? "password" : "text"}
-                    className="border border-gray-300 rounded-md px-3 py-2 w-full"
-                    placeholder="Create password"
-                  />
-                  <span
-                    onClick={props.handleChaneIcon}
-                    className="absolute  right-4 bottom-3 cursor-pointer"
-                  >
-                    {props.showPassword ? <FaRegEye /> : <IoEyeOffOutline />}
-                  </span>
-                </div>
-              </div>
-              <span className="block text-sm text-gray-500 ">
-                Between 8 and 72 characters
-              </span>
-            </div>
-            : ""
-        }
-        {props.selectedOption === "Instructor" ?
-          <div className="mb-1 mt-4">
-            <label className="block text-sm text-gray-900 font-semibold mb-4">
-              Confirm Password
-            </label>
-            <div className=" relative">
-              <input
-                type="password"
-                className="border border-gray-300 rounded-md px-3 py-2 w-full"
-                placeholder="Enter password"
-              />
-
-            </div>
-          </div> : ""
-        }
-        <div className="flex items-center justify-center">
-          <input type="checkbox" />
-          <p className="text-gray-600 text-[12px] pl-2">
-            I agree to the TeacherCool{" "}
-            <span className="text-blue-600 text-[12px]">
-              Privacy policies & Terms
-            </span>
-          </p>
-        </div>
-        <button className="bg-blue-500 hover:bg-blue-600 w-full text-white font-semi py-2 px-4 mt-7 rounded" onClick={props.selectedOption === "Student"?registerStudent:props.nextInstructor}>
-          {props.selectedOption === "Student" ? "Join for Free" : "Next >>"}
-        </button>
-      </form>
-    </div>
-  );
-};
 
 
-export const NextInstructor = () => {
-  return (
-    <div>
-      <form className="grid grid-cols-2  gap-4 w-full max-sm:grid-cols-1">
-        <div className=" mt-6">
-          <label className="block text-sm text-gray-900 font-semibold mb-4">
-            Highest Qualification
-          </label>
-          <div className="relative">
-            <select className="block appearance-none border bg-white  border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0  text-gray-600 text-sm">
-              <option value="" disabled selected className="text-gray-600 text-sm">
-                Select Qualification
-              </option>
-              <option value="1" className="text-gray-600 text-sm">
-                Option 1
-              </option>
-              <option value="2" className="text-gray-600 text-sm">
-                Option 2
-              </option>
-              <option value="3" className="text-gray-600 text-sm">
-                Option 3
-              </option>
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <img
-                src={process.env.PUBLIC_URL + `/images/Chevron Down.png`}
-                alt="drop-image"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="max-sm:mt-0 mt-6">
-          <label className="block text-sm text-gray-900 font-semibold mb-4">
-            Available Hours
-          </label>
-          <div className="relative ">
-            <select className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
-              <option value="" disabled selected className="text-gray-600 text-sm">
-                Select Hours
-              </option>
-              <option value="1" className="text-gray-600 text-sm">
-                Option 1
-              </option>
-              <option value="2" className="text-gray-600 text-sm">
-                Option 2
-              </option>
-              <option value="3" className="text-gray-600 text-sm">
-                Option 3
-              </option>
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <img
-                src={process.env.PUBLIC_URL + `/images/Chevron Down.png`}
-                alt="drop-image"
-              />
-            </div>
-          </div>
-        </div>
-        <div className=" mt-0">
-          <label className="block text-sm text-gray-900 font-semibold mb-4">
-            Expected Income
-          </label>
-          <input
-            type="text"
-            className="border bg-[white] border-gray-300 rounded-md px-3 py-2 w-full  text-gray-600 text-sm"
-            placeholder="Expectation on Income"
-          />
-        </div>
-        <div className=" mt-0">
-          <label className="block text-sm text-gray-900 font-semibold mb-4">
-            Currency
-          </label>
-          <div className="relative">
-            <select className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
-              <option value="" disabled selected className="text-gray-600 text-sm">
-                Select Currency
-              </option>
-              <option value="1" className="text-gray-600 text-sm">
-                Option 1
-              </option>
-              <option value="2" className="text-gray-600 text-sm">
-                Option 2
-              </option>
-              <option value="3" className="text-gray-600 text-sm">
-                Option 3
-              </option>
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <img
-                src={process.env.PUBLIC_URL + `/images/Chevron Down.png`}
-                alt="drop-image"
-              />
-            </div>
-          </div>
-        </div>
-        <div className=" mt-0">
-          <label className="block text-sm text-gray-900 font-semibold mb-4">
-            Category
-          </label>
-          <div className="relative">
-            <select className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
-              <option value="" disabled selected className="text-gray-600 text-sm">
-                Select your Category
-              </option>
-              <option value="1" className="text-gray-600 text-sm">
-                Option 1
-              </option>
-              <option value="2" className="text-gray-600 text-sm">
-                Option 2
-              </option>
-              <option value="3" className="text-gray-600 text-sm">
-                Option 3
-              </option>
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <img
-                src={process.env.PUBLIC_URL + `/images/Chevron Down.png`}
-                alt="drop-image"
-              />
-            </div>
-          </div>
-        </div>
-        <div className=" mt-0">
-          <label className="block text-sm text-gray-900 font-semibold mb-4">
-            Subject Specialization
-          </label>
-          <div className="relative">
-            <select className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
-              <option value="" disabled selected className="text-gray-600 text-sm">
-                Select your Specialization
-              </option>
-              <option value="1" className="text-gray-600 text-sm">
-                Option 1
-              </option>
-              <option value="2" className="text-gray-600 text-sm">
-                Option 2
-              </option>
-              <option value="3" className="text-gray-600 text-sm">
-                Option 3
-              </option>
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <img
-                src={process.env.PUBLIC_URL + `/images/Chevron Down.png`}
-                alt="drop-image"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="mb-0 mt-0 relative">
-          <label className="block text-sm text-gray-900 font-semibold mb-4">
-            Upload ID Proof 
-          </label>
-          <input
-            type="text"
-            className="border bg-[white] border-gray-300 text-gray-600 text-sm rounded-md px-3 py-2 w-full"
-            placeholder="Upload Id proof here"
-          />
-          <span className="absolute right-2 bottom-2"><MdOutlineFileUpload className="block text-blue-600 text-[22px]" /></span>
-        </div>
-        <div className="mb-0 mt-0 relative">
-          <label className="block text-sm text-gray-900 font-semibold mb-4">
-          Upload Educational Docs 
-          </label>
-          <input
-            type="text"
-            className="border bg-[white] border-gray-300 rounded-md px-3 py-2 w-full text-gray-600 text-sm"
-            placeholder="Upload Documents"
-          />
-           <span className="absolute right-2 bottom-2"><MdOutlineFileUpload className="block text-blue-600 text-[22px]" /></span>
-        </div>
-        <div className="flex ">
-          <input type="checkbox" />
-          <p className="text-gray-600 text-[12px] pl-2">
-            I agree to the TeacherCool{" "}
-            <span className="text-blue-600 text-[12px]">
-              Privacy policies & Terms
-            </span>
-          </p>
-        </div>
-      </form>
-      <div className="flex justify-center items-center">
-      <button className="bg-blue-500 hover:bg-blue-600  text-white font-semi py-2 w-96 px-4 mt-7 rounded" >
-           Join for Free
-        </button>
-        </div>
-    </div>
-  )
-}
+
+
+
 
 

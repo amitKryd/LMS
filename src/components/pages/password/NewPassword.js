@@ -5,6 +5,11 @@ import { IoEyeOffOutline } from "react-icons/io5";
 const NewPassword = (props) => {
     const [showPasswordIcon, setShowPasswordIcon] = useState(false)
     const  [showConfirmPassIcon,setShowConfirmPassIcon] = useState(false)
+    const [createNewPassword,setCreateNewPassword] = useState({
+      newPassword:'',
+      confirmNewPassword:''
+    })
+    
     
       const changeIconPassWord = () => {
         setShowPasswordIcon((data) => !data)
@@ -46,6 +51,8 @@ const NewPassword = (props) => {
               <div className=" relative">
                 <input
                   type={showPasswordIcon ? "text" : "password"}
+                  value={createNewPassword.newPassword}
+                  onChange={(e)=>  setCreateNewPassword({newPassword:e.target.value})}
                   className="border border-gray-300 rounded-md px-3 py-2 w-full"
                   placeholder="Password"
                 />
@@ -59,6 +66,8 @@ const NewPassword = (props) => {
                   type={showConfirmPassIcon ? "text" : "password"}
                   className="border border-gray-300 rounded-md px-3 py-2 w-full"
                   placeholder="Password"
+                  value={createNewPassword.confirmNewPassword}
+                  onChange={(e)=>  setCreateNewPassword({confirmNewPassword:e.target.value})}
                 />
                 <span onClick={changeIconConfirmPassWord} className="absolute  right-4 bottom-3 cursor-pointer">{showConfirmPassIcon ? <IoEyeOffOutline /> : <FaRegEye />}</span>
               </div>
