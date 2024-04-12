@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import VerifyEmail from '../verifyEmail/VerifyEmail';
 
 const ForgetPassword = (props) => {
+  const [forgetPassLogin,setForgetPassLogin]  = useState('')
+  
   const handleCloseIcon = () => {
     props.setShowLoginModal(false);
     props.setForgetPassword(false)
   }
+  
   return (
     <div>
       {props.verifyEmail === false?
@@ -28,7 +31,9 @@ const ForgetPassword = (props) => {
         <div className="mb-4 mt-4">
           <label className="block text-sm text-gray-900 font-semibold mb-4">Email Address</label>
           <input
-            type="text"
+          value={forgetPassLogin}
+            type="email"
+            onChange={(e) => setForgetPassLogin(e.target.value)}
             className="border bg-[white] border-gray-300 rounded-md px-3 py-2 w-full"
             placeholder="name@gmail.com"
           />

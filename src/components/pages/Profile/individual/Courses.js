@@ -49,7 +49,7 @@ const Courses = () => {
               >
                 {columns.map((col, colIndex) => {
                   return (
-                    <th key={colIndex} className={`w-[30%]`}>
+                    <th key={colIndex} className={`w-[35%]`}>
                       {col?.key === "invoice" ? (
                         <JoinFreeBtn
                           title={"Download Invoice"}
