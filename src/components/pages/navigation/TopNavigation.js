@@ -23,7 +23,7 @@ const Navigation = () => {
                 : "cursor-pointer  flex-shrink-0 h-7"
             }`}
             // onClick={() => handleItemClick(0)}
-            to={RoutePaths.forIndividuals.path}
+            to={RoutePaths.home.path}
           >
             For Individuals
           </NavLink>

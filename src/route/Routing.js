@@ -4,6 +4,8 @@ import { Individual } from "../components/pages/Individuals/Individual";
 import { RoutePaths } from "./RoutePath";
 import ForUniversities from "../components/pages/Profile/Universities/ForUniversities";
 import ForCorporates from "../components/pages/Profile/corporates/ForCorporates";
+import { Corporates } from "../components/Corporates/Corporates";
+import { Universities } from "../components/pages/Universities/University";
 const ForIndividuals = lazy(() =>
   import("../components/pages/Profile/individual/ForIndividuals")
 );
@@ -19,23 +21,24 @@ const Routing = () => {
             name={RoutePaths.home.name}
             element={<Individual />}
           />
+          
           <Route
             exact
             path={RoutePaths.forIndividuals.path}
             name={RoutePaths.forIndividuals.name}
-            element={<ForIndividuals />}
+            element={<Individual />}
           />
           <Route
             exact
             path={RoutePaths.forUniversities.path}
             name={RoutePaths.forUniversities.name}
-            element={<ForUniversities />}
+            element={<Universities />}
           />
           <Route
             exact
             path={RoutePaths.forCorporates.path}
             name={RoutePaths.forCorporates.name}
-            element={<ForCorporates />}
+            element={<Corporates  />}
           />
         </Routes>
       </Suspense>
