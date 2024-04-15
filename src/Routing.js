@@ -16,6 +16,7 @@ const Routing = () => {
                     name='forIndividuals'
                     element={<Protected Component={ForIndividuals} />}
                 />
+                
             </Routes>
         </div>
     )
