@@ -5,7 +5,7 @@ export const RoutePaths = {
   },
   
   forIndividuals : {
-    path : "/individuals",
+    path : "/forIndividuals",
     name : "forIndividuals",
   },
 

@@ -20,8 +20,8 @@ const Protected = (props) => {
 
 
   useEffect(() => {
-    if (!login && !status === 200  ) {
-      return navigate('/admin/login')
+    if (!login   ) {
+      return navigate('/login/')
     }
     // if (!teacherLogin && !status === 200  ) {
     //   return navigate('/login')
@@ -30,7 +30,7 @@ const Protected = (props) => {
     //   return navigate('/login')
     // }
 
-  }, [status, login])
+  }, [ login])
 
   return <props.Component />
 }

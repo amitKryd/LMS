@@ -1,10 +1,11 @@
 import React from "react";
 import BottomNav from "../../navigation/BottomNavigation";
 import { MdOutlineLogout } from "react-icons/md";
+import AdminLayout from "../../../../admin/AdminLayout";
 const ForUniversities = () => {
   return (
     <>
-      <BottomNav />
+      {/* <BottomNav />
       <div className="container w-[90%] min-h-fit border-2 border-gray-200 flex justify-center mx-auto mt-10">
         <div className="w-[20%] border border-gray-200">
           <div className="flex items-center justify-center flex-col p-4">
@@ -46,7 +47,8 @@ const ForUniversities = () => {
           </div>
         </div>
         <div className="w-[80%]"></div>
-      </div>
+      </div> */}
+      <AdminLayout />
     </>
   );
 };
