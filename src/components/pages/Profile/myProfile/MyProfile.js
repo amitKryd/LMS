@@ -5,7 +5,7 @@ const MyProfile = (props) => {
     const {setShowEditComponent} = props
 
     return (
-        <div className='mx-10 '>
+        <div className='mx-10 max-md:mx-0 '>
             <div className='flex flex-col'>
                 <p className='text-black text-xl font-bold  my-4   '>My Profile</p>
                 <div className='flex justify-between items-center'>
@@ -23,10 +23,10 @@ const MyProfile = (props) => {
                     </button>
                 </div>
             </div>
-            <div className='flex flex-col gap-5 mt-10'>
+            <div className='flex flex-col gap-5   mt-10'>
                 <p className='text-blue-500 font-bold'>Personal Information</p>
-                <div className='items-start'>
-                    <div className='flex justify-between'>
+                <div className='items-start max-md:mx-0'>
+                    <div className='flex justify-between '>
                         <p className='text-gray-400 w-1/3'>Email address</p>
                         <p className='text-gray-400 w-1/3'>Phone No.</p>
                         <p className='text-gray-400 w-1/3'>DOB</p>

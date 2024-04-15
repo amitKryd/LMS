@@ -40,8 +40,11 @@ const Login = (props) => {
     window.addEventListener("resize", centerLogin);
     return () => window.removeEventListener("resize", centerLogin);
   }, []);
-
-
+let abc = "Hello"
+const handleSubmit = (e) => {
+  e.preventDefault()
+  localStorage.setItem("userAuth", JSON.stringify(abc));
+}
   return (
     <>
       
@@ -56,7 +59,7 @@ const Login = (props) => {
                 <img src={process.env.PUBLIC_URL + "/images/x.png"} alt="cross" />
               </div>
             </div>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="mb-4 mt-10">
                 <label className="block text-sm text-gray-900 font-semibold mb-4">Email Address / Phone no.</label>
                 <input
@@ -81,7 +84,7 @@ const Login = (props) => {
                 </div>
               </div>
               <span className="block text-sm text-blue-500 cursor-pointer" onClick={handleForgetPassword}>Forget Password?</span>
-              <button className="bg-blue-500 hover:bg-blue-600 w-full text-white font-semi py-2 px-4 mt-7 rounded">
+              <button type="submit" className="bg-blue-500 hover:bg-blue-600 w-full text-white font-semi py-2 px-4 mt-7 rounded">
                 Join for Free
               </button>
             </form>
