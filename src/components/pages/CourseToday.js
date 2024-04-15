@@ -36,10 +36,10 @@ const CourseToday = () => {
     <>
       <div className="container mx-auto pt-5 pb-10">
         <div>
-          <h2 className="font-bold text-2xl max-sm:px-3">
+          <h2 className="font-bold text-4xl max-sm:text-2xl max-sm:px-3 py-2">
             Get Started with your Courses today!
           </h2>
-          <p className="text-sm pt-1 text-gray-600 pr-1 text-wrap max-sm:px-3">
+          <p className="text-base pt-1 text-gray-500 max-sm:font-medium font-semibold pr-1 text-wrap max-sm:px-3">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
           </p>

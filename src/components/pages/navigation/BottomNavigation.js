@@ -25,9 +25,8 @@ const BottomNav = () => {
  
   return (
     <>
-    <ToastContainer />
-      <div className=" bottom_head_nav  lg:visible py-2">
-        <div className="flex  container mx-auto justify-between items-center xl:flex-row sm:flex-col max-sm:flex-col">
+      <div className=" bottom_head_nav sm:invisible max-sm:invisible lg:visible py-3">
+        <div className="flex container mx-auto justify-between items-center xl:flex-row sm:flex-col max-sm:flex-col">
           {/* logo */}
           <NavLink  to={RoutePaths.home.path} className="logo_with_btn">
             <img src={Logo} alt="nav-logo" className="cursor-pointer" />
@@ -92,5 +91,5 @@ const BottomNav = () => {
       </div>
     </>
   );
-};
+          };
 export default BottomNav;
