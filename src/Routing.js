@@ -19,20 +19,20 @@ const Routing = () => {
                     element={<Protected Component={ForIndividuals} />}
                 />
                 
-                <Route
+                {/* <Route
                     exact
                     path='*'
                     name='Adminlayout'
                     element={<Protected Component={AdminLayout} />}
-                />
+                /> */}
+              
+                
                 {/* <Route
                     exact
-                    path='/admin/adminLayout/dashboard'
-                    name='Adminlayout'
-                    element={<Protected Component={Dashboard} />}
+                    path='*'
+                    name='Page 404' 
+                    element={<Page404 />}
                 /> */}
-                
-                
             </Routes>
         </div>
     )

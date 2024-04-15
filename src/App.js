@@ -27,6 +27,12 @@ function App() {
             name={RoutePaths.home.name}
             element={<ForIndividuals />}
           />
+          <Route
+                    exact
+                    path='/admin/*'
+                    name='Adminlayout'
+                    element={<AdminLayout />}
+                />
         <Route path="*" name="Home" element={<DefaultLayout />} />
         </Routes>
         </Suspense>
