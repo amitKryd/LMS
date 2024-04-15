@@ -14,7 +14,7 @@ const Navigation = () => {
   return (
     <>
       <div className="">
-        <div className="flex justify-between items-center pt-1">
+        <div className="flex max-sm:flex-col sm:flex-col lg:flex-row lg:justify-between  lg:items-center  pt-1">
           <NavLink
             className={`${
               // activeIndex === 0
