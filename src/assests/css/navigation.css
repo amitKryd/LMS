@@ -30,12 +30,13 @@
 } 
  .input_search__nav {
   padding: 0px 10px;
-  height: 40px;
   border-radius: 4px;
-  min-width: 270px;
+  /* min-width: 270px; */
   border: 1px solid #c0c0c0;
   margin-left: 20px;
 }  
+
+
 
 
 
@@ -51,6 +52,16 @@
   align-items: center;
   gap: 20px;
 } 
+.login_btn_navt{
+  border: none;
+  background-color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0px 20px;
+  height: 40px;
+
+
+}
 .login_btn_nav{
     border: none;
     background-color: #fff;

@@ -3,10 +3,12 @@ export const RoutePaths = {
     path  : "/",
     name : "Home",
   },
+  
   forIndividuals : {
     path : "/forIndividuals",
     name : "forIndividuals",
   },
+
   forUniversities : {
     path : "/universities",
     name : "forUniversities",
