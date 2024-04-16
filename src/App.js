@@ -1,40 +1,62 @@
-import React,{Suspense} from "react";
-
-// import Routing from "./route/Routing";
+import React, { Suspense } from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { RoutePaths } from "./route/RoutePath";
 import { Individual } from "./components/pages/Individuals/Individual";
 import ForIndividuals from "./components/pages/Profile/individual/ForIndividuals";
 import AdminLayout from "./admin/AdminLayout";
-import DefaultAdminLayout from "./admin/layout/DefaultAdminLayout";
+import Page404 from "./components/pages/page404/Page404";
 const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
 
 function App() {
+  const isAdminRoute = window.location.pathname.startsWith('/admin');
+
+
+  if (isAdminRoute) {
+    import("./admin/scss/style.scss");
+  }
+
   return (
     <>
-<BrowserRouter basename="/">
-      {/* <Routing /> */}
-      <Suspense>
-        <Routes>
-        <Route
-            exact
-            path="/"
-            name={RoutePaths.home.name}
-            element={<Individual />} />
-        <Route
-            exact
-            path={RoutePaths.home.path}
-            name={RoutePaths.home.name}
-            element={<ForIndividuals />}
-          />
-          <Route
-                    exact
-                    path='/admin/*'
-                    name='Adminlayout'
-                    element={<AdminLayout />}
-                />
-        <Route path="*" name="Home" element={<DefaultLayout />} />
-        </Routes>
+      <BrowserRouter basename="/">
+        {/* <Routing /> */}
+        <Suspense>
+          <Routes>
+            <Route
+              exact
+              path="/"
+              name={RoutePaths.home.name}
+              element={<Individual />} />
+            <Route
+              exact
+              path={RoutePaths.home.path}
+              name={RoutePaths.home.name}
+              element={<ForIndividuals />}
+            />
+            <Route path="/admin">
+              <Route
+                exact
+                path='*'
+                name='Adminlayout'
+                element={<AdminLayout />}
+              />
+              <Route
+              exact
+              path='*'
+              name='Page 404'
+              element={<Page404 />}
+            />
+            </Route>
+
+            <Route path="/forIndividuals">
+              <Route exact path="/forIndividuals" name="forIndividuals" element={<DefaultLayout />} />
+            </Route>
+            <Route
+              exact
+              path='*'
+              name='Page 404'
+              element={<Page404 />}
+            />
+          </Routes>
         </Suspense>
       </BrowserRouter>
     </>

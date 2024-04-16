@@ -4,11 +4,11 @@ import { CContainer, CSpinner } from '@coreui/react'
 
 // routes config
 import routes from '../routes'
-import Dashboard from '../pages/Dashboard'
+
 
 const AppContent = () => {
 
-  console.log(routes)
+  
   
   return (
     <CContainer className="px-4" lg>

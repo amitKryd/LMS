@@ -11,13 +11,13 @@ const Forum = React.lazy(() => import('./pages/Forum'))
 const Analytics = React.lazy(() => import('./pages/Analytics'))
 const routes = [
     
-    { path: '/admin/dashboard', name: 'Dashboard', element: <Dashboard/>  },
-    { path: '/admin/Content', name: 'Content', element: <Content />,  },
-    { path: '/admin/User', name: 'User', element: User },
-    { path: '/admin/Manage', name: 'Manage', element: Manage },
-    { path: '/admin/Payment', name: 'Payment', element: Payment },
-    { path: '/admin/design', name: 'Design', element: Design },
-    { path: '/admin/forum', name: 'forum', element: Forum },
-    { path: '/admin/Analytics', name: 'Analytics', element: Analytics }
+    { path: '/dashboard', name: 'Dashboard', element: <Dashboard/>  },
+    { path: '/Content', name: 'Content', element: <Content />,  },
+    { path: '/User', name: 'User', element: <User /> },
+    { path: '/Manage', name: 'Manage', element: <Manage /> },
+    { path: '/Payment', name: 'Payment', element: <Payment /> },
+    { path: '/design', name: 'Design', element: <Design /> },
+    { path: '/forum', name: 'forum', element: <Forum /> },
+    { path: '/Analytics', name: 'Analytics', element: <Analytics /> }
 ]
 export default routes
