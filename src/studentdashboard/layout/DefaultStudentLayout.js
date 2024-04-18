@@ -1,8 +1,8 @@
 import React from 'react';
 import { AppContent, AppSidebar, AppHeader } from '../component/index';
-import AppRightSidebar from '../component/AppRightSidebar';
 
-const DefaultAdminLayout = () => {
+
+const DefaultStudentLayout = () => {
   return (
     <div className="">
       {/* AppHeader */}
@@ -16,17 +16,15 @@ const DefaultAdminLayout = () => {
       </div>
       
       {/* Main Content */}
-      <div className="col-span-9">
+      <div className="col-span-10">
         <AppContent />
       </div>
       
       {/* Right Sidebar */}
-      <div className="col-span-1">
-        <AppRightSidebar />
-      </div>
+      
       </div>
     </div>
   );
 };
 
-export default DefaultAdminLayout;
+export default DefaultStudentLayout;

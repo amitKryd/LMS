@@ -1,9 +1,5 @@
-
 import React from 'react'
 import { CNavItem } from '@coreui/react'
-
-
-
 const AdminNav = [
     {
         component: CNavItem,

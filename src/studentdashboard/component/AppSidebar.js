@@ -12,7 +12,7 @@ import {
 
 
 import { AppSidebarNav } from './AppSidebarNav'
-import AdminNav from '../AdminNav'
+import StudentNav from '../StudentNav'
 
 
 
@@ -26,7 +26,7 @@ const AppSidebar = () => {
     <div >
     
       
-      <AppSidebarNav items={AdminNav} />
+      <AppSidebarNav items={StudentNav} />
       
    
     </div>
