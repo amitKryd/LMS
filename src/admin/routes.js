@@ -15,6 +15,8 @@ const Student = React.lazy(() => import('./pages/manageuser/Student'))
 const Teacher = React.lazy(() => import('./pages/manageuser/Teacher'))
 const University = React.lazy(() => import('./pages/manageuser/University'))
 const Corporate = React.lazy(() => import('./pages/manageuser/Corporate'))
+const CurrencySetting = React.lazy(() => import('./pages/systemsetting/CurrencySetting'))
+
 const routes = [
     
     { path: '/dashboard', exact:true, name: 'Dashboard', element: <Dashboard/>  },
@@ -30,6 +32,6 @@ const routes = [
     { path: '/ManageCourses', name: 'ManageCourses', element: <ManageCourses /> },
     { path: '/forum', name: 'forum', element: <Forum /> },
     { path: '/Analytics', name: 'Analytics', element: <Analytics /> },
-    
+    { path: '/systemsetting/CurrencySetting', name: 'CurrencySetting', element: <CurrencySetting /> },
 ]
 export default routes

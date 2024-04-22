@@ -278,7 +278,7 @@ const AdminNav = [
               {
                 component: CNavItem,
                 name: <span className='fw-semibold   pl-2'>Currency Settings</span>,
-                to: '/admin/currencysetting',
+                to: '/admin/systemsetting/CurrencySetting',
               },
               {
                 component: CNavItem,
