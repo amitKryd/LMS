@@ -30,7 +30,17 @@ body {
     align-items: center;
     min-height: calc(4rem + 1px); // stylelint-disable-line function-disallowed-list
   }
+  
+  
 }
+.sidebar-nav .nav-link.active{
+    background: #fff !important;
+    color:blue
+  }
+  .sidebar-nav .nav-group.show .nav-group-toggle {
+    color:blue
+    
+  }
 
 .sidebar-toggler {
   @include ltr-rtl("margin-left", auto);
@@ -42,9 +52,19 @@ body {
 //     @include ltr-rtl("margin-right", auto);
 //   }
 // }
+.sidebar-nav .nav-link{
+  // padding: 12px 4px !important;
+}
 
 .header > .container-fluid + .container-fluid {
   min-height: 3rem;
+}
+.sidebar-nav .nav-group-toggle::after{
+  background-color: blue;
+  // font-weight: bold;
+  // background-image: url('https://www.flaticon.com/free-icon/upload_130906') !important;
+  // width: 30px !important; /* Increase width */
+  //   height: 20px !important;
 }
 
 .footer {

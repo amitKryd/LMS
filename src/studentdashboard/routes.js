@@ -1,21 +1,21 @@
 import React from 'react'
 const Dashboard = React.lazy(() => import('./pages/Dashboard'))
-// const Content = React.lazy(() => import('./pages/Content'))
-// const User = React.lazy(() => import('./pages/User'))
-// const Manage = React.lazy(() => import('./pages/Manage'))
-// const Payment = React.lazy(() => import('./pages/Payment'))
-// const Design = React.lazy(() => import('./pages/Design'))
-// const Forum = React.lazy(() => import('./pages/Forum'))
-// const Analytics = React.lazy(() => import('./pages/Analytics'))
+const Bookmarks = React.lazy(() => import('./pages/Bookmarks'))
+const Certificates = React.lazy(() => import('./pages/Certificates'))
+const CourseCatalog = React.lazy(() => import('./pages/CourseCatalog'))
+const Payment = React.lazy(() => import('./pages/Payments'))
+const MyLearning = React.lazy(() => import('./pages/MyLearning'))
+const MyProgress = React.lazy(() => import('./pages/MyProgress'))
+const Test = React.lazy(() => import('./pages/Test'))
 const routes = [
     
     { path: '/dashboard', name: 'Dashboard', element: <Dashboard/>  },
-    // { path: '/Content', name: 'Content', element: <Content />,  },
-    // { path: '/User', name: 'User', element: <User /> },
-    // { path: '/Manage', name: 'Manage', element: <Manage /> },
-    // { path: '/Payment', name: 'Payment', element: <Payment /> },
-    // { path: '/design', name: 'Design', element: <Design /> },
-    // { path: '/forum', name: 'forum', element: <Forum /> },
-    // { path: '/Analytics', name: 'Analytics', element: <Analytics /> }
+    { path: '/Bookmarks', name: 'Bookmarks', element: <Bookmarks />,  },
+    { path: '/Certificates', name: 'Certificates', element: <Certificates /> },
+    { path: '/CourseCatalog', name: 'CourseCatalog', element: <CourseCatalog /> },
+    { path: '/Payment', name: 'Payment', element: <Payment /> },
+    { path: '/MyLearning', name: 'MyLearning', element: <MyLearning /> },
+    { path: '/MyProgress', name: 'MyProgress', element: <MyProgress /> },
+    { path: '/Test', name: 'Test', element: <Test /> }
 ]
 export default routes

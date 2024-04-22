@@ -29,12 +29,12 @@ function App() {
               path="/"
               name={RoutePaths.home.name}
               element={<Individual />} />
-            <Route
+            {/* <Route
               exact
               path={RoutePaths.home.path}
               name={RoutePaths.home.name}
               element={<ForIndividuals />}
-            />
+            /> */}
             <Route path="/admin">
               <Route
                 exact
@@ -64,9 +64,9 @@ function App() {
             />
             </Route>
 
-            <Route path="/forIndividuals">
-              <Route exact path="/forIndividuals" name="forIndividuals" element={<DefaultLayout />} />
-            </Route>
+           
+              <Route exact path="*" name="forIndividuals" element={<DefaultLayout />} />
+            
             <Route
               exact
               path='*'
