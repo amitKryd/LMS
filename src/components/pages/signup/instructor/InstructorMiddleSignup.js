@@ -1,30 +1,56 @@
-import React from 'react'
+import React from "react";
 import { FiEdit2 } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaRegEye } from "react-icons/fa6";
 import { IoEyeOffOutline } from "react-icons/io5";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 const InstructorMiddleSignup = (props) => {
-    const {nextInstructorFinalPage,setInstructorMiddleFormData,instructorMiddleformData} = props
-    const handleChange = (e) => {
-      const { name, value } = e.target;
-      setInstructorMiddleFormData((prevState) => ({
+  const { nextInstructorFinalPage, instructorSignup, setInstructorSignup } =
+    props;
+
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    if (value.trim() !== "") {
+      setInstructorSignup((prevState) => ({
         ...prevState,
-        [name]: value, 
+        [name]: name == "image" ? URL.createObjectURL(files[0]) : value,
       }));
-    };
+    } else {
+      setInstructorSignup((prevState) => ({
+        ...prevState,
+        [name]: name == "image" ? "" : "",
+      }));
+    }
+  };
   return (
     <div className="mt-6">
       <form>
         <div className="flex items-center justify-around gap-5">
           <div className="relative w-[159px] h-[156px] rounded-full border-2">
-            <p className="absolute top-0 right-3 m-2 bg-[white] cursor-pointer">
-              <FiEdit2 className="text-gray-400 bg-[white]" />
-            </p>
-            <p className="absolute text-sm text-gray-600 text-wrap text-center bottom-12" name="image" 
-            value={instructorMiddleformData.image}
-            onChange={handleChange}>
-              Image size should be 150x200
-            </p>
+            <label>
+              <p className="absolute z-10  right-3 m-2 bg-[white] cursor-pointer">
+                <FiEdit2 className="text-gray-400 bg-[white]" />
+              </p>
+              <input
+                type="file"
+                accept="image/*"
+                name="image"
+                className="hidden"
+                onChange={handleChange}
+              />
+            </label>
+            <div className="absolute text-sm text-gray-600 text-wrap text-center bottom-12">
+              {instructorSignup?.image ? (
+                <img
+                  src={instructorSignup?.image}
+                  className="relative top-12 left-0 border-none rounded-full w-[155px] h-[155px]"
+                  alt="no image"
+                />
+              ) : (
+                " Image size should be 150x200"
+              )}
+            </div>
           </div>
           <div className="cursor-pointer">
             <p className="text-sm text-gray-900 font-semibold">
@@ -38,9 +64,12 @@ const InstructorMiddleSignup = (props) => {
             Country
           </label>
           <div className="relative">
-            <select name="country" 
-            value={instructorMiddleformData.country}
-            onChange={handleChange}  className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
+            <select
+              name="country"
+              value={instructorSignup.country}
+              onChange={handleChange}
+              className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm"
+            >
               <option
                 value=""
                 disabled
@@ -49,14 +78,26 @@ const InstructorMiddleSignup = (props) => {
               >
                 Countries
               </option>
-              <option value="1" className="text-gray-600 text-sm">
-                Option 1
+              <option
+                value="india"
+                selected={instructorSignup.country === "india"}
+                className="text-gray-600 text-sm"
+              >
+                India
               </option>
-              <option value="2" className="text-gray-600 text-sm">
-                Option 2
+              <option
+                value="australia"
+                selected={instructorSignup.country === "australia"}
+                className="text-gray-600 text-sm"
+              >
+                Australia
               </option>
-              <option value="3" className="text-gray-600 text-sm">
-                Option 3
+              <option
+                value="United States"
+                selected={instructorSignup.country === "United States"}
+                className="text-gray-600 text-sm"
+              >
+                United States
               </option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -69,87 +110,93 @@ const InstructorMiddleSignup = (props) => {
             </div>
           </div>
         </div>
-        
-          <div className="mb-4 mt-6">
-            <label className="block text-sm text-gray-900 font-semibold mb-4">
-              Contact number
-            </label>
-            <div className="flex gap-4 ">
-              <span className="flex items-center cursor-pointer pl-2 text-gray-500 border bg-[white] border-gray-300 rounded-md px-3 py-2">
-                +91 <IoIosArrowDown className="block ml-1" />
-              </span>
 
-              <input
-                type="tel"
-                name="contactNumber" 
-            value={instructorMiddleformData.contactNumber}
-            onChange={handleChange}
-                className="border bg-[white] border-gray-300 rounded-md w-full px-3 py-2  focus:outline-none"
-                placeholder="9999999999"
-              />
-            </div>
-          </div>
-        
-         
-            <div>
-              <div className="mb-1">
-                <label className="block text-sm text-gray-900 font-semibold mb-4">
-                  Password
-                </label>
-                <div className=" relative">
-                  <input
-                    type={props.showPassword ? "password" : "text"}
-                    name="password" 
-            value={instructorMiddleformData.password}
-            onChange={handleChange}
-                    className="border border-gray-300 rounded-md px-3 py-2 w-full"
-                    placeholder="Create password"
-                  />
-                  <span
-                    onClick={props.handleChaneIcon}
-                    className="absolute  right-4 bottom-3 cursor-pointer"
-                  >
-                    {props.showPassword ? <FaRegEye /> : <IoEyeOffOutline />}
-                  </span>
-                </div>
-              </div>
-              <span className="block text-sm text-gray-500 ">
-                Between 8 and 72 characters
-              </span>
-            </div>
-            
-        
-          <div className="mb-1 mt-4">
+        <div className="mb-4 mt-6">
+          <label className="block text-sm text-gray-900 font-semibold mb-4">
+            Contact number
+          </label>
+
+          <PhoneInput
+            country="in"
+            name="studentNumber"
+            value={instructorSignup.studentNumber}
+            onChange={(phone) =>
+              setInstructorSignup({ ...instructorSignup, studentNumber: phone })
+            }
+            countryCodeEditable={false}
+            placeholder="mobile number"
+            onlyCountries={["in", "us", "au"]}
+            inputStyle={{ width: "100%", height: "42px", paddingLeft: "42px" }}
+            dropdownStyle={{ maxWidth: "250px" }}
+          />
+          {/* <div className="flex gap-4 ">
+            <span className="flex items-center cursor-pointer pl-2 text-gray-500 border bg-[white] border-gray-300 rounded-md px-3 py-2">
+              +91 <IoIosArrowDown className="block ml-1" />
+            </span>
+
+            <input
+              type="tel"
+              name="contactNumber"
+              value={instructorSignup.contactNumber}
+              onChange={handleChange}
+              className="border bg-[white] border-gray-300 rounded-md w-full px-3 py-2  focus:outline-none"
+              placeholder="9999999999"
+            />
+          </div> */}
+        </div>
+
+        <div>
+          <div className="mb-1">
             <label className="block text-sm text-gray-900 font-semibold mb-4">
-              Confirm Password
+              Password
             </label>
             <div className=" relative">
               <input
-                type="password"
-                name="confirmPassword" 
-                value={instructorMiddleformData.confirmPassword}
+                type={props.showPassword ? "text" : "password"}
+                name="password"
+                value={instructorSignup.password}
                 onChange={handleChange}
                 className="border border-gray-300 rounded-md px-3 py-2 w-full"
-                placeholder="Enter password"
+                placeholder="Create password"
               />
-
+              <span
+                onClick={props.handleChaneIcon}
+                className="absolute  right-4 bottom-3 cursor-pointer"
+              >
+                {props.showPassword ? <FaRegEye /> : <IoEyeOffOutline />}
+              </span>
             </div>
-          </div> 
-        <div className="flex items-center justify-center">
-          <input type="checkbox" />
-          <p className="text-gray-600 text-[12px] pl-2">
-            I agree to the TeacherCool{" "}
-            <span className="text-blue-600 text-[12px]">
-              Privacy policies & Terms
-            </span>
-          </p>
+          </div>
+          <span className="block text-sm text-gray-500 ">
+            Between 8 and 72 characters
+          </span>
         </div>
-        <button className="bg-blue-500 hover:bg-blue-600 w-full text-white font-semi py-2 px-4 mt-7 rounded" onClick={nextInstructorFinalPage}>
-        <span className="pr-2">Next </span> <span>&raquo;</span>
+
+        <div className="mb-1 mt-4">
+          <label className="block text-sm text-gray-900 font-semibold mb-4">
+            Confirm Password
+          </label>
+          <div className=" relative">
+            <input
+              type="password"
+              name="confirmPassword"
+              value={instructorSignup.confirmPassword}
+              onChange={handleChange}
+              className="border border-gray-300 rounded-md px-3 py-2 w-full"
+              placeholder="Enter password"
+            />
+          </div>
+        </div>
+
+        <button
+          className="bg-blue-500 hover:bg-blue-600 w-full text-white font-semi py-2 px-4 mt-7 rounded"
+          onClick={nextInstructorFinalPage}
+        >
+          <span className="pr-2">Next </span> <span>&raquo;</span>
         </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default InstructorMiddleSignup
+export default InstructorMiddleSignup;

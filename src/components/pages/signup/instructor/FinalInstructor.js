@@ -1,15 +1,23 @@
-import React from 'react'
+import React from "react";
 import { MdOutlineFileUpload } from "react-icons/md";
 
 const FinalInstructor = (props) => {
-    const {finalInstructorformData,setFinalInstructorformData} = props
-    const handleChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        setFinalInstructorformData((prevData) => ({
-          ...prevData,
-          [name]: type === 'checkbox' ? checked : value,
-        }));
-      };
+  const { instructorSignup, setInstructorSignup } = props;
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    if (value.trim() !== "") {
+      setInstructorSignup((prevData) => ({
+        ...prevData,
+        [name]: type === "checkbox" ? checked : value,
+      }));
+    } else {
+      setInstructorSignup((prevData) => ({
+        ...prevData,
+        [name]: type === "checkbox" ? "" : "",
+      }));
+    }
+  };
   return (
     <div>
       <form className="grid grid-cols-2  gap-4 w-full max-sm:grid-cols-1">
@@ -18,10 +26,18 @@ const FinalInstructor = (props) => {
             Highest Qualification
           </label>
           <div className="relative">
-            <select name="qualification"
-              value={finalInstructorformData.qualification}
-              onChange={handleChange} className="block appearance-none border bg-white  border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0  text-gray-600 text-sm">
-              <option value="" disabled selected className="text-gray-600 text-sm">
+            <select
+              name="qualification"
+              value={instructorSignup.qualification}
+              onChange={handleChange}
+              className="block appearance-none border bg-white  border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0  text-gray-600 text-sm"
+            >
+              <option
+                value=""
+                disabled
+                selected
+                className="text-gray-600 text-sm"
+              >
                 Select Qualification
               </option>
               <option value="1" className="text-gray-600 text-sm">
@@ -47,10 +63,18 @@ const FinalInstructor = (props) => {
             Available Hours
           </label>
           <div className="relative ">
-            <select name="hours"
-              value={finalInstructorformData.hours}
-              onChange={handleChange}  className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
-              <option value="" disabled selected className="text-gray-600 text-sm">
+            <select
+              name="hours"
+              value={instructorSignup.hours}
+              onChange={handleChange}
+              className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm"
+            >
+              <option
+                value=""
+                disabled
+                selected
+                className="text-gray-600 text-sm"
+              >
                 Select Hours
               </option>
               <option value="1" className="text-gray-600 text-sm">
@@ -78,8 +102,8 @@ const FinalInstructor = (props) => {
           <input
             type="text"
             name="income"
-              value={finalInstructorformData.income}
-              onChange={handleChange}
+            value={instructorSignup.income}
+            onChange={handleChange}
             className="border bg-[white] border-gray-300 rounded-md px-3 py-2 w-full  text-gray-600 text-sm"
             placeholder="Expectation on Income"
           />
@@ -89,10 +113,18 @@ const FinalInstructor = (props) => {
             Currency
           </label>
           <div className="relative">
-            <select name="currency"
-              value={finalInstructorformData.currency}
-              onChange={handleChange} className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
-              <option value="" disabled selected className="text-gray-600 text-sm">
+            <select
+              name="currency"
+              value={instructorSignup.currency}
+              onChange={handleChange}
+              className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm"
+            >
+              <option
+                value=""
+                disabled
+                selected
+                className="text-gray-600 text-sm"
+              >
                 Select Currency
               </option>
               <option value="1" className="text-gray-600 text-sm">
@@ -118,10 +150,18 @@ const FinalInstructor = (props) => {
             Category
           </label>
           <div className="relative">
-            <select  name="category"
-              value={finalInstructorformData.category}
-              onChange={handleChange} className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
-              <option value="" disabled selected className="text-gray-600 text-sm">
+            <select
+              name="category"
+              value={instructorSignup.category}
+              onChange={handleChange}
+              className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm"
+            >
+              <option
+                value=""
+                disabled
+                selected
+                className="text-gray-600 text-sm"
+              >
                 Select your Category
               </option>
               <option value="1" className="text-gray-600 text-sm">
@@ -147,10 +187,18 @@ const FinalInstructor = (props) => {
             Subject Specialization
           </label>
           <div className="relative">
-            <select name="specialization"
-              value={finalInstructorformData.specialization}
-              onChange={handleChange} className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm">
-              <option value="" disabled selected className="text-gray-600 text-sm">
+            <select
+              name="specialization"
+              value={instructorSignup.specialization}
+              onChange={handleChange}
+              className="block appearance-none border bg-white border-gray-300 rounded-md px-3 py-2 w-full focus:outline-0 text-gray-600 text-sm"
+            >
+              <option
+                value=""
+                disabled
+                selected
+                className="text-gray-600 text-sm"
+              >
                 Select your Specialization
               </option>
               <option value="1" className="text-gray-600 text-sm">
@@ -178,12 +226,14 @@ const FinalInstructor = (props) => {
           <input
             type="text"
             name="idProof"
-            value={finalInstructorformData.idProof}
+            value={instructorSignup.idProof}
             onChange={handleChange}
             className="border bg-[white] border-gray-300 text-gray-600 text-sm rounded-md px-3 py-2 w-full"
             placeholder="Upload Id proof here"
           />
-          <span className="absolute right-2 bottom-2"><MdOutlineFileUpload className="block text-blue-600 text-[22px]" /></span>
+          <span className="absolute right-2 bottom-2">
+            <MdOutlineFileUpload className="block text-blue-600 text-[22px]" />
+          </span>
         </div>
         <div className="mb-0 mt-0 relative">
           <label className="block text-sm text-gray-900 font-semibold mb-4">
@@ -192,17 +242,22 @@ const FinalInstructor = (props) => {
           <input
             type="text"
             name="educationalDocs"
-            value={finalInstructorformData.educationalDocs}
+            value={instructorSignup.educationalDocs}
             onChange={handleChange}
             className="border bg-[white] border-gray-300 rounded-md px-3 py-2 w-full text-gray-600 text-sm"
             placeholder="Upload Documents"
           />
-          <span className="absolute right-2 bottom-2"><MdOutlineFileUpload className="block text-blue-600 text-[22px]" /></span>
+          <span className="absolute right-2 bottom-2">
+            <MdOutlineFileUpload className="block text-blue-600 text-[22px]" />
+          </span>
         </div>
         <div className="flex ">
-          <input type="checkbox" name="agree"
-            value={finalInstructorformData.agree}
-            onChange={handleChange} />
+          <input
+            type="checkbox"
+            name="agree"
+            value={instructorSignup.agree}
+            onChange={handleChange}
+          />
           <p className="text-gray-600 text-[12px] pl-2">
             I agree to the TeacherCool{" "}
             <span className="text-blue-600 text-[12px]">
@@ -212,12 +267,12 @@ const FinalInstructor = (props) => {
         </div>
       </form>
       <div className="flex justify-center items-center">
-        <button className="bg-blue-500 hover:bg-blue-600  text-white font-semi py-2 w-96 px-4 mt-7 rounded" >
+        <button className="bg-blue-500 hover:bg-blue-600  text-white font-semi py-2 w-96 px-4 mt-7 rounded">
           Join for Free
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FinalInstructor
+export default FinalInstructor;

@@ -1,15 +1,31 @@
 import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import { faqData } from "../../assests/faq/FaqData";
 const FrequentlyAskQuest = () => {
   const [id, setId] = useState(null);
   const handleDropDown = (id) => {
     setId((prevId) => (prevId === id ? null : id));
   };
+
+  const parseHtml = (html) => {
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = html;
+
+    const strongElement = tempElement.getElementsByTagName("strong");
+    for (let i = 0; i < strongElement.length; i++) {
+      strongElement[i].style.color = "#3ca5eb";
+    }
+
+    return { __html: tempElement.innerHTML };
+  };
+
   return (
     <div className="bg-orange-100 pb-10 pt-20">
       <div className="container mx-auto min-h-0 flex items-center max-sm:items-start max-sm:px-4 flex-col   ">
-        <h1 className="text-4xl max-sm:text-2xl font-bold mb-4">Frequently asked questions</h1>
-        {[1, 2, 3, 4, 5, 6, 7].map((item, index) => {
+        <h1 className="text-4xl max-sm:text-2xl font-bold mb-4">
+          Frequently asked questions
+        </h1>
+        {faqData?.map((item, index) => {
           return (
             <div key={index}>
               <div
@@ -17,13 +33,9 @@ const FrequentlyAskQuest = () => {
                   id == item ? "bg-blue-100" : "mb-4"
                 }`}
               >
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Quisque suscipit rhoncus nunc id aliquet.Lorem ipsum dolor sit
-                  amet
-                </p>
+                <p dangerouslySetInnerHTML={parseHtml(item.question.__html)} />
                 <IoIosArrowDown
-                  className={`cursor-pointer text-2xl max-sm:text-6xl  ${
+                  className={`cursor-pointer text-2xl max-sm:text-3xl  ${
                     id == item
                       ? "delay-50 duration-300 -rotate-180 text-blue-600"
                       : "delay-50 duration-300 rotate-60"
@@ -33,24 +45,7 @@ const FrequentlyAskQuest = () => {
               </div>
               {id == item && (
                 <div className="w-[70vw] max-sm:w-full  border rounded-lg border-gray-200 p-4 mb-4 bg-white">
-                  <p>
-                    This is the first item's accordion body. It is shown by
-                    default, until the collapse plugin adds the appropriate
-                    classes that we use to style each element. These classes
-                    control the overall appearance, as well as the showing and
-                    hiding via CSS transitions. You can modify any of this with
-                    custom CSS or overriding our default variables. It's also
-                    worth noting that just about any HTML can go within the
-                    .accordion-body, though the transition does limit overflow.
-                    This is the first item's accordion body. It is shown by
-                    default, until the collapse plugin adds the appropriate
-                    classes that we use to style each element. These classes
-                    control the overall appearance, as well as the showing and
-                    hiding via CSS transitions. You can modify any of this with
-                    custom CSS or overriding our default variables. It's also
-                    worth noting that just about any HTML can go within the
-                    .accordion-body, though the transition does limit overflow.
-                  </p>
+                  <p dangerouslySetInnerHTML={parseHtml(item.answer.__html)} />
                 </div>
               )}
             </div>

@@ -101,17 +101,18 @@ const StudentsPlans = () => {
               title={"Try TeacherCool Plus Annual"}
               bgColor={"bg-none"}
               color={"text-blue-600"}
-              className="px-[12px] "
+              className="px-[12px]"
               border={"border border-blue-700"}
             />
             <p className="pt-4 pb-20">14-day money-back guarantee</p>
             <hr className="border"></hr>
             <p className="text-start pt-4 pb-4">
-              Everything included in the monthly plan,<br/> plus:
+              Everything included in the monthly plan,
+              <br /> plus:
             </p>
             <p className="pb-4 pt-4 flex text-start">
               <MdCheck className="text-blue-600 text-xl me-2" />
-              Save when you pay up front for the  year
+              Save when you pay up front for the year
             </p>
             <hr className="border"></hr>
             <p className="pb-4 pt-4 flex text-start">
