@@ -45,7 +45,7 @@ const Signup = (props) => {
   };
 
   const [studentFormValues, setStudentFormValues] = useState(initailValues);
-  console.log(studentFormValues, "student form");
+  // console.log(studentFormValues, "student form");
 
   // instructor first page signup start
   const instructorValues = {
