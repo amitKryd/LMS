@@ -45,7 +45,7 @@ const Signup = (props) => {
   };
 
   const [studentFormValues, setStudentFormValues] = useState(initailValues);
-  // console.log(studentFormValues, "student form");
+  console.log(studentFormValues, "student form");
 
   // instructor first page signup start
   const instructorValues = {
@@ -67,7 +67,7 @@ const Signup = (props) => {
     agree: false,
   };
   const [instructorSignup, setInstructorSignup] = useState(instructorValues);
-  // console.log(instructorSignup, ":ddddddddddddddd");
+  console.log(instructorSignup, ":ddddddddddddddd");
   // instructor first page signup end
 
   const handleOptionChange = (option) => {
