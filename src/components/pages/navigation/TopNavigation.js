@@ -7,9 +7,10 @@ const Navigation = () => {
   const location = useLocation();
   const pathName = location?.pathname?.split("/");
 
-  // const handleItemClick = (index) => {
-  //   setActiveIndex(index === activeIndex ? null : index);
-  // };
+  const handleItemClick = (index) => {
+    setActiveIndex(index === activeIndex ? null : index);
+    
+  };
 
   return (
     <>
@@ -23,7 +24,7 @@ const Navigation = () => {
                 : "cursor-pointer  flex-shrink-0 h-7"
             }`}
             // onClick={() => handleItemClick(0)}
-            to={RoutePaths.home.path}
+            to={'/forIndividuals'}
           >
             For Individuals
           </NavLink>
@@ -34,8 +35,8 @@ const Navigation = () => {
                 ? "active pb-2 border-b-2 border-solid border-blue-500 cursor-pointer h-7"
                 : "cursor-pointer flex-shrink-0 h-7"
             }`}
-            // onClick={() => handleItemClick(1)}
-            to={RoutePaths.forUniversities.path}
+            onClick={() => handleItemClick(1)}
+            // to={RoutePaths.forUniversities.path}
           >
             For Universities
           </NavLink>
@@ -46,7 +47,7 @@ const Navigation = () => {
                 ? "active pb-2 border-b-2 border-solid border-blue-500 cursor-pointer h-7"
                 : "cursor-pointer flex-shrink-0 h-7"
             }`}
-            // onClick={() => handleItemClick(2)}
+            onClick={() => handleItemClick(2)}
             to={RoutePaths.forCorporates.path}
           >
             For Corporates

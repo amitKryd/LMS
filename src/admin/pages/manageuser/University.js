@@ -2,7 +2,7 @@ import React from 'react'
 import { Pagination,Switch  } from 'antd';
 
 import { IoSearchOutline } from "react-icons/io5";
-const Payment = () => {
+const University = () => {
     const onShowSizeChange = (current, pageSize) => {
         console.log(current, pageSize);
       };
@@ -11,29 +11,28 @@ const Payment = () => {
       };
       const tableData = [
         {
-          TeacherId:"TCH-19786622",
+          icon: "cardThree.png",
           name: "Manish Kumar",
           emailId: "hello122@gmail.com",
-          Subject: "Javascript",
-          blockedPayment:"NO",
+          Course: "Javascript",
+          Status:"Completed",
           eyeIcons:"eye.png"
         },
         {
-          TeacherId:"TCH-19786622",
+          icon: "cardThree.png",
           name: "Manish Kumar",
           emailId: "hello122@gmail.com",
-          Subject: "Javascript",
-          blockedPayment:"NO",
+          Course: "Javascript",
+          Status:"Completed",
           eyeIcons:"eye.png"
-        },
-        {
-          TeacherId:"TCH-19786622",
+        }, {
+          icon: "cardThree.png",
           name: "Manish Kumar",
           emailId: "hello122@gmail.com",
-          Subject: "Javascript",
-          blockedPayment:"NO",
+          Course: "Javascript",
+          Status:"Completed",
           eyeIcons:"eye.png"
-        },
+        }
       ]
   return (
     <div className=''>
@@ -56,29 +55,40 @@ const Payment = () => {
             </div>
           </div>
           <div className=''>
-          <span className='font-semibold text-xl'>Manage Payment</span>
+          <span className='font-semibold text-xl'>University Management</span>
           </div>
       </div>
          <div className='overflow-x-auto overflow-y-hidden mb-2 rounded bg-white'>
          <table className="min-w-full divide-y ">
   <thead className="">
     <tr>
-      <th className=" text-center py-3  tracking-wider">Teacher ID</th>
+      <th className=" text-center py-3  tracking-wider">Profile</th>
       <th className=" text-center py-3  tracking-wider">Name</th>
       <th className=" text-center py-3  tracking-wider">Email ID</th>
-      <th className=" text-center py-3  tracking-wider">Subject</th>
-      <th className=" text-center py-3  tracking-wider">Blocked Payment</th>
+      <th className=" text-center py-3  tracking-wider">Course</th>
+      <th className=" text-center py-3  tracking-wider">Status</th>
       <th className=" text-center py-3  tracking-wider">Action</th>
     </tr>
   </thead>
   <tbody className="bg-white divide-y divide-gray-200">
     {tableData?.length > 0 && tableData?.map((item, ind) => (
       <tr key={ind} className="hover:bg-gray-100">
-        <td className=" py-4 whitespace-nowrap text-center text-gray-700 text-sm">{item?.TeacherId}</td> 
+        <td className=" py-4 whitespace-nowrap text-center"> 
+            <div className="flex justify-center items-center">
+              <div className="rounded-full bg-gray-300">
+                <img
+                  src={process.env.PUBLIC_URL + `/images/admin/${item?.icon}`}
+                  alt="Avatar"
+                  className="w-10 h-10 object-contain rounded-full"
+                />
+              </div>
+            </div>
+         
+        </td>
         <td className=" py-4 whitespace-nowrap text-center text-gray-700 text-sm">{item?.name}</td> 
         <td className=" py-4 whitespace-nowrap text-center  text-gray-700 text-sm">{item?.emailId}</td> 
-        <td className=" py-4 whitespace-nowrap text-center text-gray-700 text-sm">{item?.Subject}</td> 
-        <td className=" py-4 whitespace-nowrap text-center text-green-700 text-sm">{item?.blockedPayment}</td> 
+        <td className=" py-4 whitespace-nowrap text-center text-gray-700 text-sm">{item?.Course}</td> 
+        <td className=" py-4 whitespace-nowrap text-center text-green-700 text-sm">{item?.Status}</td> 
         <td className=" py-4  "> <div className='flex justify-center items-center gap-2'><img
                   src={process.env.PUBLIC_URL + `/images/admin/${item?.eyeIcons}`}
                   alt="Avatar"
@@ -103,4 +113,4 @@ const Payment = () => {
   )
 }
 
-export default Payment
+export default University

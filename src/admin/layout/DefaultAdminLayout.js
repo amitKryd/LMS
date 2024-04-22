@@ -11,19 +11,22 @@ const DefaultAdminLayout = () => {
       </div>
       <div className='grid grid-cols-12 border-t-2'>
       {/* Left Sidebar */}
-      <div className="col-span-2  min-h-[100vh] pl-2">
+      <div className="col-span-2  min-h-[100vh] ">
         <AppSidebar />
       </div>
       
       {/* Main Content */}
-      <div className="col-span-9">
+      <div className="col-span-10 relative">
         <AppContent />
+        <div className='absolute top-0 right-0   '>
+        <AppRightSidebar />
+        </div>
       </div>
       
       {/* Right Sidebar */}
-      <div className="col-span-1">
+      {/* <div className="col-span-1">
         <AppRightSidebar />
-      </div>
+      </div> */}
       </div>
     </div>
   );

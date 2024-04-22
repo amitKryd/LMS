@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom'
 
 const AppRightSidebar = () => {
   return (
-    <div className='bg-white pt-4 px-2 flex justify-center flex-col items-center'>
-        <div className='flex flex-col justify-center py-2  items-center cursor-pointer'>
+    <div className=' w-[200px] px-2 m-auto h-[100vh] pt-4  flex  flex-col bg-[white] items-center'>
+        <div className='flex flex-col py-2  items-center cursor-pointer'>
         <img
                     src={process.env.PUBLIC_URL + `/images/admin/FrameOne.png`}
                     alt="no img"

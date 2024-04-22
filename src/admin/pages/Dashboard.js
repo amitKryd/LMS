@@ -190,7 +190,7 @@ const Dashboard = () => {
   </div>
 </div>
 
-        <div className='overflow-x-auto my-5'>
+        <div className='overflow-x-auto my-5 rounded'>
   <table className="min-w-full divide-y divide-gray-200">
     <thead className="bg-gray-100">
       <tr>
@@ -212,11 +212,11 @@ const Dashboard = () => {
     className="w-full h-full object-contain rounded-full"
   />
         </div>      
-              <span className="font-semibold pl-1">{item?.name}</span>
+              <span className="font-semibold pl-1 text-gray-700 text-sm">{item?.name}</span>
             </div>
           </td>
-          <td className="px-6 py-4 whitespace-nowrap">{item?.program}</td>
-          <td className="px-6 py-4 whitespace-nowrap">{item?.regNo}</td>
+          <td className="px-6 py-4 whitespace-nowrap text-gray-700 text-sm">{item?.program}</td>
+          <td className="px-6 py-4 whitespace-nowrap  text-gray-700 text-sm">{item?.regNo}</td>
           <td className=" py-4 pl-11 text-green-400 ">{item?.percentage}%</td>
         </tr>
       ))}
